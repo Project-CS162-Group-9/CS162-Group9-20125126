@@ -3,27 +3,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-/*struct Staff {
-	string fullName, account, password;
-};
-struct Student {
-	int ID, day, month, year, gender;	// 0: male, 1: female
-	string fullName, account, password;
-};
-struct Class {
-	string name;
-	//int nStudent; Student* students;
-};
-struct SchoolYear {
-	int nStaff;	Staff* staffs;
-	int nClass;	Class* classes;
-};
-
-void loadStaff(string path, Staff& sta);
-void loadClass(string path, Class& cl);
-void createASchoolYear(string path, SchoolYear& scYear);
-void save2File(string path, SchoolYear& scYear);*/
-
 struct Date {
 	int day, month, year;
 };
@@ -55,6 +34,6 @@ void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);
 void loadSemester(string path, SchoolYear& scYear);
 void saveToFile(string path, SchoolYear& scYear);
-void createASchoolYear(string path, SchoolYear& scYear);
+void task1_createASchoolYear(string path, SchoolYear& scYear);
 
 #endif

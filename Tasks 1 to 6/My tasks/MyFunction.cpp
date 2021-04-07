@@ -7,7 +7,7 @@ void loadStaff(string path, SchoolYear& scYear)
 	ifstream fin;
 	fin.open(path);
 	if (fin.is_open()) {
-		fin >> scYear.nStaff; fin.ignore();
+		fin >> scYear.nStaff; fin.ignore(1000, '\n');
 		scYear.staffs = new Staff[scYear.nStaff];
 
 		for (int i = 0; i < scYear.nStaff; ++i) {
@@ -24,7 +24,7 @@ void loadClass(string path, SchoolYear& scYear)
 	ifstream fin;
 	fin.open(path);
 	if (fin.is_open()) {
-		fin >> scYear.nClass; fin.ignore();
+		fin >> scYear.nClass;
 		scYear.classes = new Class[scYear.nClass];
 
 		for (int i = 0; i < scYear.nClass; ++i) {
@@ -58,10 +58,12 @@ void saveToFile(string path, SchoolYear& scYear)
 		fout << "The staffs:\n";
 		for (int i = 0; i < scYear.nStaff; ++i)
 			fout << scYear.staffs[i].fullName << '\n' << scYear.staffs[i].account << '\n' << scYear.staffs[i].password << '\n';
+		fout << '\n';
 
 		fout << "The classes:\n";
 		for (int i = 0; i < scYear.nClass; ++i)
 			fout << scYear.classes[i].year << " " << scYear.classes[i].name << '\n';
+		fout << '\n';
 
 		fout << "The Semesters:\n";
 		for (int i = 0; i < scYear.nSemester; ++i)
@@ -70,7 +72,7 @@ void saveToFile(string path, SchoolYear& scYear)
 	else cout << "Can't open file!\n";
 	fout.close();
 }
-void createASchoolYear(string path, SchoolYear& scYear)
+void task1_createASchoolYear(string path, SchoolYear& scYear)
 {
 	//cout << "Pls input Name of School year, like 2020-2021: "; getline(cin, scYear.name);
 	loadStaff("_staffs.txt", scYear);

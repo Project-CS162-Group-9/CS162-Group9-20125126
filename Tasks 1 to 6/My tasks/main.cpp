@@ -10,7 +10,7 @@ int main()
 	if (role == 0) {
 		cout << "Input your work as in Project CS162_requirements (1, 2,...): "; int work; cin >> work;
 		if (work == 1)
-			createASchoolYear("_outputSchoolYear.txt", scYear);
+			task1_createASchoolYear("_outputSchoolYear.txt", scYear);
 	}
 
 	return 0;
