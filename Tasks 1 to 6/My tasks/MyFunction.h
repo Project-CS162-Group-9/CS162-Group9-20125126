@@ -35,5 +35,6 @@ void loadClass(string path, SchoolYear& scYear);
 void loadSemester(string path, SchoolYear& scYear);
 void saveToFile(string path, SchoolYear& scYear);
 void task1_createASchoolYear(string path, SchoolYear& scYear);
+void task2_createClasses1stYearStudent(string path, SchoolYear& scYear);
 
 #endif

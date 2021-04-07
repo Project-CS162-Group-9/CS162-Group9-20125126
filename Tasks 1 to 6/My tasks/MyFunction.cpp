@@ -79,6 +79,19 @@ void task1_createASchoolYear(string path, SchoolYear& scYear)
 	loadClass("_classes.txt", scYear);
 	loadSemester("_semesters.txt", scYear);
 
-	saveToFile("_outputSchoolYear.txt", scYear);
+	saveToFile(path, scYear);
+}
+void task2_createClasses1stYearStudent(string path, SchoolYear& scYear)
+{
+	loadClass("_classes.txt", scYear);
+	ofstream fout;
+	fout.open(path);
+	if (fout.is_open()) {
+		fout << "The 1st yeat classes:\n";
+		for (int i = 0; i < scYear.nClass; ++i)
+			if (scYear.classes[i].year == 1) fout << scYear.classes[i].name << '\n';
+		fout << '\n';
+	}
+	fout.close();
 }
 
