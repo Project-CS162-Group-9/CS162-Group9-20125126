@@ -1,0 +1,5 @@
+The Semester we've created:
+Semester name: Fall
+Start Date: 5/10/2020
+End Date: 5/2/2021
+The school year that the newly created semester belongs to: 2020 - 2021

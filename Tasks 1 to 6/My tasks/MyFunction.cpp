@@ -229,7 +229,30 @@ void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear)
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path, SchoolYear& scYear)
+void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path, Semester& sem)
 {
-	loadSemester("_createNewSemester.txt", scYear);
+	ifstream fin;
+	fin.open("_createNewSemester.txt");
+	if (fin.is_open()) {
+		getline(fin, sem.name);
+		fin >> sem.start.day >> sem.start.month >> sem.start.year;
+		fin >> sem.end.day >> sem.end.month >> sem.end.year;
+	}
+	else cout << "Can't open file!\n";
+	fin.close();
+
+	ofstream fout;
+	fout.open(path);
+	if (fout.is_open()) {
+		fout << "The Semester we've created:\n";
+		fout << "Semester name: " << sem.name << '\n';
+		fout << "Start Date: " << sem.start.day << '/' << sem.start.month << '/' << sem.start.year << '\n';
+		fout << "End Date: " << sem.end.day << '/' << sem.end.month << '/' << sem.end.year << '\n';
+
+		fout << "The school year that the newly created semester belongs to: ";
+		if (sem.name == "Fall") fout << sem.start.year << " - " << sem.end.year;
+		else fout << sem.end.year - 1 << " - " << sem.end.year;
+	}
+	else cout << "Can't open file !\n";
+	fout.close();
 }

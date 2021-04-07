@@ -40,6 +40,6 @@ void task2_createClasses1stYearStudent(string path, SchoolYear& scYear);
 void task3_addNew1stYearStudents(string path, SchoolYear& scYear);
 void task4_importCSVFileStudent1Class(string path, Class& cl);
 void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear);
-void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path, SchoolYear& scYear);
+void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path, Semester& sem);
 
 #endif

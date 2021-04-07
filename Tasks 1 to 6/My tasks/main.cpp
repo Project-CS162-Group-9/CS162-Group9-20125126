@@ -22,10 +22,10 @@ int main()
 		if (task == 5)		// Using: "_students.txt"
 			task5_addOnly1stYearStudentsToClasses("5_AddOnly1stYearStudents.txt", scYear);
 		cout << "Your work has been all in Text File already !\n";
-		if (task == 6)		// Using: "_createNewSemester.txt"
-			task6_createASemester_SchoolyearThatSemesterBelongsTo("6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", scYear);
-
+		if (task == 6) {	// Using: "_createNewSemester.txt"
+			Semester sem;
+			task6_createASemester_SchoolyearThatSemesterBelongsTo("6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", sem);
+		}
 	}
-
 	return 0;
 }
