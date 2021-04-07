@@ -180,3 +180,48 @@ void task4_importCSVFileStudent1Class(string path, Class& cl)
 	else cout << "Can't open file !\n";
 	fout.close();
 }
+void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear)
+{
+	ifstream fin;
+	fin.open("_students.txt");
+	if (!fin.is_open()) { cout << "Can't open file !\n"; return; }
+
+	int nTemp; fin >> nTemp;
+	scYear.nClass += nTemp;	//Updated the number of classes in School Year
+	Student* temps = new Student[nTemp];
+	for (int i = 0; i < nTemp; ++i) {
+		fin >> temps[i].year; fin.ignore();
+		getline(fin, temps[i].studentID);
+		getline(fin, temps[i].firstName);
+		getline(fin, temps[i].lastName);
+		getline(fin, temps[i].gender);
+		getline(fin, temps[i].DOB);
+		getline(fin, temps[i].socialID);
+	}
+	fin.close();
+
+	ofstream fout;
+	fout.open(path);
+	if (fout.is_open()) {
+		fout << "Class 20APCS1:\n";
+		for (int i = 0; i < nTemp; ++i)
+			if (temps[i].year == 1 && temps[i].studentID[4] == '5') {
+				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
+				fout << '\n';
+			}
+		fout << "Class 20CLC1:\n";
+		for (int i = 0; i < nTemp; ++i)
+			if (temps[i].year == 1 && temps[i].studentID[4] == '7') {
+				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
+				fout << '\n';
+			}
+		fout << "Class 20VP:\n";
+		for (int i = 0; i < nTemp; ++i)
+			if (temps[i].year == 1 && temps[i].studentID[4] == '6') {
+				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
+				fout << '\n';
+			}
+	}
+	else cout << "Can't open file !\n";
+	fout.close();
+}

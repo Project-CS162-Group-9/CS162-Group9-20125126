@@ -39,5 +39,6 @@ void task1_createASchoolYear(string path, SchoolYear& scYear);
 void task2_createClasses1stYearStudent(string path, SchoolYear& scYear);
 void task3_addNew1stYearStudents(string path, SchoolYear& scYear);
 void task4_importCSVFileStudent1Class(string path, Class& cl);
+void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear);
 
 #endif

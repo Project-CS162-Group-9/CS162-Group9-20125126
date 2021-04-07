@@ -19,6 +19,8 @@ int main()
 			Class cl;
 			task4_importCSVFileStudent1Class("4_studentsIn1ClassFromCSVfile.txt", cl);
 		}
+		if (task == 5)		// Using: "_students.txt"
+			task5_addOnly1stYearStudentsToClasses("5_AddOnly1stYearStudents.txt", scYear);
 		cout << "Your work has been all in Text File already !\n";
 	}
 
