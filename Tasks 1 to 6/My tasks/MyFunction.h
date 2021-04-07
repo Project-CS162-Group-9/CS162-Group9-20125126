@@ -20,12 +20,12 @@ struct Class {
 };
 struct Semester {
 	string name;	//Fall, Summer, Autumn
-	//int year;
+	int year;
 	Date start, end;
 };
 struct SchoolYear {	
 	string name;	//2020-2021
-	int nSemester; Semester* semesters;
+	Semester* semesters;	
 	int nStaff; Staff* staffs;
 	int nClass; Class* classes;
 };

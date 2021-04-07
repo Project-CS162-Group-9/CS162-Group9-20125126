@@ -54,5 +54,11 @@ The classes:
 
 The Semesters:
 Fall
+Start Date: 5/10/2020
+End Date: 5/2/2021
 Spring 
+Start Date: 6/2/2021
+End Date: 6/6/2021
 Autumn
+Start Date: 7/6/2021
+End Date: 7/10/2021

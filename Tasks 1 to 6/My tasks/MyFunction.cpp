@@ -41,11 +41,12 @@ void loadSemester(string path, SchoolYear& scYear)
 	ifstream fin;
 	fin.open(path);
 	if (fin.is_open()) {
-		fin >> scYear.nSemester; fin.ignore();
-		scYear.semesters = new Semester[scYear.nSemester];
-
-		for (int i = 0; i < scYear.nSemester; ++i) {
+		scYear.semesters = new Semester[3];
+		for (int i = 0; i < 3; ++i) {
 			getline(fin, scYear.semesters[i].name);
+			fin >> scYear.semesters[i].start.day >> scYear.semesters[i].start.month >> scYear.semesters[i].start.year;
+			fin >> scYear.semesters[i].end.day >> scYear.semesters[i].end.month >> scYear.semesters[i].end.year;
+			fin.ignore();
 		}
 	}
 	else cout << "Can't open file!\n";
@@ -67,8 +68,11 @@ void saveToFile(string path, SchoolYear& scYear)
 		fout << '\n';
 
 		fout << "The Semesters:\n";
-		for (int i = 0; i < scYear.nSemester; ++i)
+		for (int i = 0; i < 3; ++i) {
 			fout << scYear.semesters[i].name << '\n';
+			fout << "Start Date: " << scYear.semesters[i].start.day << '/' << scYear.semesters[i].start.month << '/' << scYear.semesters[i].start.year << '\n';
+			fout << "End Date: " << scYear.semesters[i].end.day << '/' << scYear.semesters[i].end.month << '/' << scYear.semesters[i].end.year << '\n';
+		}
 	}
 	else cout << "Can't open file!\n";
 	fout.close();
