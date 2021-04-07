@@ -10,8 +10,8 @@ struct Staff {
 	string fullName, account, password;
 };
 struct Student {
-	int No, year;
-	string studentID, firstName, lastName, gender, DOB, socialID;
+	int year;
+	string No, studentID, firstName, lastName, gender, DOB, socialID;
 };
 struct Class {
 	int year;
@@ -38,5 +38,6 @@ void saveToFile(string path, SchoolYear& scYear);
 void task1_createASchoolYear(string path, SchoolYear& scYear);
 void task2_createClasses1stYearStudent(string path, SchoolYear& scYear);
 void task3_addNew1stYearStudents(string path, SchoolYear& scYear);
+void task4_importCSVFileStudent1Class(string path, Class& cl);
 
 #endif

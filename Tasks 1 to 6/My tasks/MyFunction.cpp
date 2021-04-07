@@ -1,4 +1,4 @@
-#include "MyFunction.h"
+﻿#include "MyFunction.h"
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -18,27 +18,6 @@ void loadStaff(string path, SchoolYear& scYear)
 	}
 	else cout << "Can't open file!\n";
 	//delete[] scYear.staffs;
-	fin.close();
-}
-void loadStudent(string path, Class& cl)
-{
-	ifstream fin;
-	fin.open(path);
-	if (fin.is_open()) {
-		int t; fin >> t;
-		cl.students = new Student[t];
-
-		for (int i = 0; i < t; ++i) {
-			fin >> cl.students[i].year; fin.ignore();
-			getline(fin, cl.students[i].studentID);
-			getline(fin, cl.students[i].firstName);
-			getline(fin, cl.students[i].lastName);
-			getline(fin, cl.students[i].gender);
-			getline(fin, cl.students[i].DOB);
-			getline(fin, cl.students[i].socialID);
-		}
-	}
-	else cout << "Can't open file!\n";
 	fin.close();
 }
 void loadClass(string path, SchoolYear& scYear)
@@ -158,6 +137,45 @@ void task3_addNew1stYearStudents(string path, SchoolYear& scYear)
 				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
 				fout << '\n';
 			}
+	}
+	else cout << "Can't open file !\n";
+	fout.close();
+}
+void task4_importCSVFileStudent1Class(string path, Class& cl)
+{
+	ifstream fin;
+	fin.open("_CSV file.csv");
+	if (!fin.is_open()) { cout << "Can't open file !\n"; return; }
+
+	fin >> cl.nStudent; fin.ignore();
+	cl.students = new Student[cl.nStudent];
+
+	getline(fin, cl.name);
+	for (int i = 0; i < cl.nStudent; ++i) {
+		getline(fin, cl.students[i].No, ',');
+		getline(fin, cl.students[i].studentID, ',');
+		getline(fin, cl.students[i].firstName, ',');
+		getline(fin, cl.students[i].lastName, ',');
+		getline(fin, cl.students[i].gender, ',');
+		getline(fin, cl.students[i].DOB, ',');
+		getline(fin, cl.students[i].socialID, '\n');
+	}
+	fin.close();
+
+	ofstream fout;
+	fout.open(path);
+	if (fout.is_open()) {
+		fout << "Class " << cl.name << '\n';
+		for (int j = 0; j < cl.nStudent; ++j)
+		{
+			fout << "No: " << cl.students[j].No << '\n';
+			fout << "Student ID: " << cl.students[j].studentID << '\n';
+			fout << "First name: " << cl.students[j].firstName << '\n';
+			fout << "Last name: " << cl.students[j].lastName << '\n';
+			fout << "Gender: " << cl.students[j].gender << '\n';
+			fout << "Date of Birth: " << cl.students[j].DOB << '\n';
+			fout << "Social ID: " << cl.students[j].socialID << '\n' << '\n';
+		}
 	}
 	else cout << "Can't open file !\n";
 	fout.close();

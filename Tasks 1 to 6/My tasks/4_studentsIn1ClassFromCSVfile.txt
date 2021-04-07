@@ -1,0 +1,33 @@
+Class 20APCS1
+No: 1
+Student ID: 20125126
+First name: Bao
+Last name: Bui
+Gender: Male
+Date of Birth: 24/06/2002
+Social ID: abcde
+
+No: 2
+Student ID: 20125004
+First name: Hiep
+Last name: Hoang
+Gender: Male
+Date of Birth: 1/1/2002
+Social ID: abce
+
+No: 3
+Student ID: 20125006
+First name: Khang
+Last name: Nguyen
+Gender: Male
+Date of Birth: 2/2/2002
+Social ID: abcf
+
+No: 4
+Student ID: 20125009
+First name: Khoi
+Last name: Ta
+Gender: Male
+Date of Birth: 3/3/2002
+Social ID: abcg
+
