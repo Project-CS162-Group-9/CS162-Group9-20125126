@@ -15,16 +15,16 @@ struct Student {
 };
 struct Class {
 	int year;
-	string name;	//20APCS1, 20CLC1, 20VP
+	string name;		//like 20APCS1, 20CLC1, 20VP
 	int nStudent; Student* students;
 };
 struct Semester {
-	string name;	//Fall, Summer, Autumn
-	int year;
+	string name;		//Fall, Summer, Autumn
+	string schoolYear;	//like 2020-2021
 	Date start, end;
 };
 struct SchoolYear {	
-	string name;	//2020-2021
+	string name;		//like 2020-2021
 	Semester* semesters;	
 	int nStaff; Staff* staffs;
 	int nClass; Class* classes;
@@ -40,5 +40,6 @@ void task2_createClasses1stYearStudent(string path, SchoolYear& scYear);
 void task3_addNew1stYearStudents(string path, SchoolYear& scYear);
 void task4_importCSVFileStudent1Class(string path, Class& cl);
 void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear);
+void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path, SchoolYear& scYear);
 
 #endif

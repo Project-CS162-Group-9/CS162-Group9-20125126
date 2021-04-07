@@ -229,3 +229,7 @@ void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear)
 	else cout << "Can't open file !\n";
 	fout.close();
 }
+void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path, SchoolYear& scYear)
+{
+	loadSemester("_createNewSemester.txt", scYear);
+}
