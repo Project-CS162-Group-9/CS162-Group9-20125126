@@ -10,8 +10,8 @@ struct Staff {
 	string fullName, account, password;
 };
 struct Student {
-	string ID, fullName, gender, account, password;
-	Date dob;
+	int No, year;
+	string studentID, firstName, lastName, gender, DOB, socialID;
 };
 struct Class {
 	int year;
@@ -31,10 +31,12 @@ struct SchoolYear {
 };
 
 void loadStaff(string path, SchoolYear& scYear);
+void loadStudent(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);
 void loadSemester(string path, SchoolYear& scYear);
 void saveToFile(string path, SchoolYear& scYear);
 void task1_createASchoolYear(string path, SchoolYear& scYear);
 void task2_createClasses1stYearStudent(string path, SchoolYear& scYear);
+void task3_addNew1stYearStudents(string path, SchoolYear& scYear);
 
 #endif

@@ -1,0 +1,21 @@
+Class 20APCS1:
+20125126
+Bao  Bui
+Male
+24/06/2002
+Social ID: abcde
+
+Class 20CLC1:
+20127001
+Cuong Tran
+Male
+02/02/2002
+Social ID: fghijk
+
+Class 20VP:
+20126001
+Quynh Le
+Female
+07/03/2002
+Social ID: lmnopq
+

@@ -17,6 +17,28 @@ void loadStaff(string path, SchoolYear& scYear)
 		}
 	}
 	else cout << "Can't open file!\n";
+	//delete[] scYear.staffs;
+	fin.close();
+}
+void loadStudent(string path, Class& cl)
+{
+	ifstream fin;
+	fin.open(path);
+	if (fin.is_open()) {
+		int t; fin >> t;
+		cl.students = new Student[t];
+
+		for (int i = 0; i < t; ++i) {
+			fin >> cl.students[i].year; fin.ignore();
+			getline(fin, cl.students[i].studentID);
+			getline(fin, cl.students[i].firstName);
+			getline(fin, cl.students[i].lastName);
+			getline(fin, cl.students[i].gender);
+			getline(fin, cl.students[i].DOB);
+			getline(fin, cl.students[i].socialID);
+		}
+	}
+	else cout << "Can't open file!\n";
 	fin.close();
 }
 void loadClass(string path, SchoolYear& scYear)
@@ -92,6 +114,51 @@ void task2_createClasses1stYearStudent(string path, SchoolYear& scYear)
 			if (scYear.classes[i].year == 1) fout << scYear.classes[i].name << '\n';
 		fout << '\n';
 	}
+	else cout << "Can't open file!\n";
 	fout.close();
 }
+void task3_addNew1stYearStudents(string path, SchoolYear& scYear)
+{
+	ifstream fin;
+	fin.open("_students.txt");
+	if (!fin.is_open()) { cout << "Can't open file !\n"; return; }
 
+	int nTemp; fin >> nTemp;
+	scYear.nClass += nTemp;	//Updated the number of classes in School Year
+	Student* temps = new Student[nTemp];
+	for (int i = 0; i < nTemp; ++i) {
+		fin >> temps[i].year; fin.ignore();
+		getline(fin, temps[i].studentID);
+		getline(fin, temps[i].firstName);
+		getline(fin, temps[i].lastName);
+		getline(fin, temps[i].gender);
+		getline(fin, temps[i].DOB);
+		getline(fin, temps[i].socialID);
+	}
+	fin.close();
+
+	ofstream fout;
+	fout.open(path);
+	if (fout.is_open()) {
+		fout << "Class 20APCS1:\n";
+		for (int i = 0; i < nTemp; ++i)
+			if (temps[i].year ==1 && temps[i].studentID[4] == '5') {
+				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
+				fout << '\n';
+			}
+		fout << "Class 20CLC1:\n";
+		for (int i = 0; i < nTemp; ++i)
+			if (temps[i].year == 1 && temps[i].studentID[4] == '7') {
+				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
+				fout << '\n';
+			}
+		fout << "Class 20VP:\n";
+		for (int i = 0; i < nTemp; ++i)
+			if (temps[i].year == 1 && temps[i].studentID[4] == '6') {
+				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
+				fout << '\n';
+			}
+	}
+	else cout << "Can't open file !\n";
+	fout.close();
+}
