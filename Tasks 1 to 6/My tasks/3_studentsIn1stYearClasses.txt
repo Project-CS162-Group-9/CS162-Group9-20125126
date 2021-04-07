@@ -1,18 +1,36 @@
-Class 20APCS1:
+	Class 20APCS1:
 20125126
 Bao  Bui
 Male
 24/06/2002
 Social ID: abcde
 
-Class 20CLC1:
+20125006
+Khang  Nguyen
+Male
+16/04/2002
+Social ID: awbvcda
+
+	Class 20CLC1:
 20127001
 Cuong Tran
 Male
 02/02/2002
 Social ID: fghijk
 
-Class 20VP:
+20127009
+Dat Luong
+Male
+03/03/2002
+Social ID: bfvdcs
+
+20127003
+Quynh Hoang
+07/03/2002
+hvnqking
+Social ID: 
+
+	Class 20VP:
 20126001
 Quynh Le
 Female

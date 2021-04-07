@@ -119,19 +119,19 @@ void task3_addNew1stYearStudents(string path, SchoolYear& scYear)
 	ofstream fout;
 	fout.open(path);
 	if (fout.is_open()) {
-		fout << "Class 20APCS1:\n";
+		fout << "\tClass 20APCS1:\n";
 		for (int i = 0; i < nTemp; ++i)
 			if (temps[i].year ==1 && temps[i].studentID[4] == '5') {
 				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
 				fout << '\n';
 			}
-		fout << "Class 20CLC1:\n";
+		fout << "\tClass 20CLC1:\n";
 		for (int i = 0; i < nTemp; ++i)
 			if (temps[i].year == 1 && temps[i].studentID[4] == '7') {
 				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
 				fout << '\n';
 			}
-		fout << "Class 20VP:\n";
+		fout << "\tClass 20VP:\n";
 		for (int i = 0; i < nTemp; ++i)
 			if (temps[i].year == 1 && temps[i].studentID[4] == '6') {
 				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
@@ -203,19 +203,19 @@ void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear)
 	ofstream fout;
 	fout.open(path);
 	if (fout.is_open()) {
-		fout << "Class 20APCS1:\n";
+		fout << "\tClass 20APCS1:\n";
 		for (int i = 0; i < nTemp; ++i)
 			if (temps[i].year == 1 && temps[i].studentID[4] == '5') {
 				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
 				fout << '\n';
 			}
-		fout << "Class 20CLC1:\n";
+		fout << "\tClass 20CLC1:\n";
 		for (int i = 0; i < nTemp; ++i)
 			if (temps[i].year == 1 && temps[i].studentID[4] == '7') {
 				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
 				fout << '\n';
 			}
-		fout << "Class 20VP:\n";
+		fout << "\tClass 20VP:\n";
 		for (int i = 0; i < nTemp; ++i)
 			if (temps[i].year == 1 && temps[i].studentID[4] == '6') {
 				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
