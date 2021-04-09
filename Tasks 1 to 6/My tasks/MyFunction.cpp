@@ -77,20 +77,20 @@ void saveToFile(string path, SchoolYear& scYear)
 	else cout << "Can't open file!\n";
 	fout.close();
 }
-void task1_createASchoolYear(string path, SchoolYear& scYear)
+void task1_createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear& scYear)
 {
 	//cout << "Pls input Name of School year, like 2020-2021: "; getline(cin, scYear.name);
-	loadStaff("_staffs.txt", scYear);
-	loadClass("_classes.txt", scYear);
-	loadSemester("_semesters.txt", scYear);
+	loadStaff(path_staffs, scYear);
+	loadClass(path_classes, scYear);
+	loadSemester(path_semesters, scYear);
 
-	saveToFile(path, scYear);
+	saveToFile(pathOutput, scYear);
 }
-void task2_createClasses1stYearStudent(string path, SchoolYear& scYear)
+void task2_createClasses1stYearStudent(string path_classes, string pathOutput, SchoolYear& scYear)
 {
-	loadClass("_classes.txt", scYear);
+	loadClass(path_classes, scYear);
 	ofstream fout;
-	fout.open(path);
+	fout.open(pathOutput);
 	if (fout.is_open()) {
 		fout << "The 1st yeat classes:\n";
 		for (int i = 0; i < scYear.nClass; ++i)
@@ -100,10 +100,10 @@ void task2_createClasses1stYearStudent(string path, SchoolYear& scYear)
 	else cout << "Can't open file!\n";
 	fout.close();
 }
-void task3_addNew1stYearStudents(string path, SchoolYear& scYear)
+void task3_addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& scYear)
 {
 	ifstream fin;
-	fin.open("_students.txt");
+	fin.open(path_students);
 	if (!fin.is_open()) { cout << "Can't open file !\n"; return; }
 
 	int nTemp; fin >> nTemp;
@@ -121,7 +121,7 @@ void task3_addNew1stYearStudents(string path, SchoolYear& scYear)
 	fin.close();
 
 	ofstream fout;
-	fout.open(path);
+	fout.open(pathOutput);
 	if (fout.is_open()) {
 		fout << "\tClass 20APCS1:\n";
 		for (int i = 0; i < nTemp; ++i)
@@ -145,10 +145,10 @@ void task3_addNew1stYearStudents(string path, SchoolYear& scYear)
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void task4_importCSVFileStudent1Class(string path, Class& cl)
+void task4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl)
 {
 	ifstream fin;
-	fin.open("_CSV file.csv");
+	fin.open(path_CSV);
 	if (!fin.is_open()) { cout << "Can't open file !\n"; return; }
 
 	fin >> cl.nStudent; fin.ignore();
@@ -167,7 +167,7 @@ void task4_importCSVFileStudent1Class(string path, Class& cl)
 	fin.close();
 
 	ofstream fout;
-	fout.open(path);
+	fout.open(pathOutput);
 	if (fout.is_open()) {
 		fout << "Class " << cl.name << '\n';
 		for (int j = 0; j < cl.nStudent; ++j)
@@ -184,10 +184,10 @@ void task4_importCSVFileStudent1Class(string path, Class& cl)
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear)
+void task5_addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear)
 {
 	ifstream fin;
-	fin.open("_students.txt");
+	fin.open(path_students);
 	if (!fin.is_open()) { cout << "Can't open file !\n"; return; }
 
 	int nTemp; fin >> nTemp;
@@ -205,7 +205,7 @@ void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear)
 	fin.close();
 
 	ofstream fout;
-	fout.open(path);
+	fout.open(pathOutput);
 	if (fout.is_open()) {
 		fout << "\tClass 20APCS1:\n";
 		for (int i = 0; i < nTemp; ++i)
@@ -229,10 +229,10 @@ void task5_addOnly1stYearStudentsToClasses(string path, SchoolYear& scYear)
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path, Semester& sem)
+void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem)
 {
 	ifstream fin;
-	fin.open("_createNewSemester.txt");
+	fin.open(path_NewSemester);
 	if (fin.is_open()) {
 		getline(fin, sem.name);
 		fin >> sem.start.day >> sem.start.month >> sem.start.year;
@@ -242,7 +242,7 @@ void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path, Semester
 	fin.close();
 
 	ofstream fout;
-	fout.open(path);
+	fout.open(pathOutput);
 	if (fout.is_open()) {
 		fout << "The Semester we've created:\n";
 		fout << "Semester name: " << sem.name << '\n';
