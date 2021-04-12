@@ -12,6 +12,8 @@ struct Staff {
 struct Student {
 	int year;
 	string No, studentID, firstName, lastName, gender, DOB, socialID;
+	int course[6];
+	int courseCount;
 };
 struct Class {
 	int year;
@@ -23,9 +25,9 @@ struct Semester {
 	string schoolYear;	//like 2020-2021
 	Date start, end;
 };
-struct SchoolYear {	
+struct SchoolYear {
 	string name;		//like 2020-2021
-	Semester* semesters;	
+	Semester* semesters;
 	int nStaff; Staff* staffs;
 	int nClass; Class* classes;
 };

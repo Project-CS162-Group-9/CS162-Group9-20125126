@@ -1,4 +1,5 @@
 ﻿#include "MyFunction.h"
+#define foru(i, a, b) for(int i=a; i<=b; i++)
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -254,4 +255,13 @@ void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemest
 	}
 	else cout << "Can't open file !\n";
 	fout.close();
+}
+
+void enrollCourse(Student &s, int courseID)
+{
+    if (s.courseCount < 5)
+    {
+        foru(i, 0, s.courseCount - 1) if (s.course[i] == courseID) return;
+        s.course[++s.courseCount] = courseID;
+    }
 }
