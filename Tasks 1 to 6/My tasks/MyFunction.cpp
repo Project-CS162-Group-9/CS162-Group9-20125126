@@ -170,8 +170,7 @@ void task4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class&
 	fout.open(pathOutput);
 	if (fout.is_open()) {
 		fout << "Class " << cl.name << '\n';
-		for (int j = 0; j < cl.nStudent; ++j)
-		{
+		for (int j = 0; j < cl.nStudent; ++j) {
 			fout << "No: " << cl.students[j].No << '\n';
 			fout << "Student ID: " << cl.students[j].studentID << '\n';
 			fout << "First name: " << cl.students[j].firstName << '\n';
