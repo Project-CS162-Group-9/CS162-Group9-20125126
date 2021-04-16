@@ -255,6 +255,33 @@ void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester,
 	else cout << "Can't open file !\n";
 	fout.close();
 }
+void task7_createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
+	ifstream fin;
+	fin.open(path_createSession);
+	if (fin.is_open()) {
+		fin >> c.nameCourses;
+		fin >> c.teacher;
+		getline(fin, c.day1);
+		getline(fin, c.day2);
+		fin >> c.ID >> c.credit >> c.maxStudent;
+	}
+	else cout << "Can not open file \n";
+	fin.close();
+
+	ofstream fout;
+	fout.open(pathOutput);
+	if (fout.is_open()) {
+		fout << "Course name: " << c.nameCourses << endl;
+		fout << "Teacher name: " << c.teacher << endl;
+		fout << "ID course: " << c.ID << endl;
+		fout << "The number of credits: " << c.ID << endl;
+		fout << "Max students in course: " << c.maxStudent << endl;
+		fout << "Session 1: " << c.day1 << endl;
+		fout << "Session 2: " << c.day2 << endl;
+	}
+	else cout << "Can not open file \n";
+	fin.close();
+}
 
 void enrollCourse(Student &s, int courseID)
 {
