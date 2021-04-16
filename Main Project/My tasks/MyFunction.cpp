@@ -282,6 +282,47 @@ void task7_createCourseSession(string path_createSession, string pathOutput, new
 	else cout << "Can not open file \n";
 	fin.close();
 }
+void task8_addCourse(string path_addCourses, string pathOutput) {
+	ifstream fin;
+
+	int nums;
+	fin >> nums;
+	newCourse* nTemp = new newCourse[nums];
+	fin.open(path_addCourses);
+	if (fin.is_open()) {
+		for (int i = 0; i < nums; i++) {
+			getline(fin, nTemp[i].ID);
+			getline(fin, nTemp[i].nameCourses);
+			getline(fin, nTemp[i].teacher);
+			getline(fin, nTemp[i].session1);
+			getline(fin, nTemp[i].session2);
+			fin >> nTemp[i].maxStudent;
+			fin >> nTemp[i].credit;
+		}
+		
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+	ofstream fout;
+	fout.open(pathOutput);
+	if (fout.is_open()) {
+		for (int i = 0; i < nums; i++) {
+			if (nTemp[i].semester == 1) {
+				fout << nTemp[i].ID << endl << nTemp[i].nameCourses << endl << nTemp[i].teacher << endl << nTemp[i].session1 << endl << nTemp[i].session2 << endl << nTemp[i].maxStudent << endl << nTemp[i].credit;
+			}
+			if (nTemp[i].semester == 2) {
+				fout << nTemp[i].ID << endl << nTemp[i].nameCourses << endl << nTemp[i].teacher << endl << nTemp[i].session1 << endl << nTemp[i].session2 << endl << nTemp[i].maxStudent << endl << nTemp[i].credit;
+			}
+			if (nTemp[i].semester == 3) {
+				fout << nTemp[i].ID << endl << nTemp[i].nameCourses << endl << nTemp[i].teacher << endl << nTemp[i].session1 << endl << nTemp[i].session2 << endl << nTemp[i].maxStudent << endl << nTemp[i].credit;
+			}
+		}
+	}
+	else
+		cout << "Can't open file " << endl;
+	fout.close();
+}
 
 void enrollCourse(Student &s, int courseID)
 {
