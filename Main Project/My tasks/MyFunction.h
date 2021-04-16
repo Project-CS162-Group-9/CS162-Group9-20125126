@@ -31,6 +31,12 @@ struct SchoolYear {
 	int nStaff; Staff* staffs;
 	int nClass; Class* classes;
 };
+struct newCourse {
+	string ID, nameCourses, teacher, session1, session2, day1, day2;
+	int credit, maxStudent;
+	int semester;
+};
+
 
 void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);
