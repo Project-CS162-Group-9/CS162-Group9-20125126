@@ -291,3 +291,22 @@ void enrollCourse(Student &s, int courseID)
         s.course[++s.courseCount] = courseID;
     }
 }
+
+void viewEnrollCourse(Student &s)
+{
+    foru(i, 0, s.courseCount)
+    {
+        cout << s.course[i];
+    }
+}
+
+void removeEnrollCourse(Student &s, int courseID)
+{
+    foru(i, 0, s.courseCount)
+    if (courseID == s.course[i])
+    {
+        foru (j, i, s.courseCount - 1) s[j] = s[j+1];
+        s.courseCount--;
+        break;
+    }
+}
