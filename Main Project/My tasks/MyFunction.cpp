@@ -255,7 +255,7 @@ void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester,
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void task7_createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
+void t7_createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
 	ifstream fin;
 	fin.open(path_createSession);
 	if (fin.is_open()) {
