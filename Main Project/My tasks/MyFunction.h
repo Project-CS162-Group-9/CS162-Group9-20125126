@@ -42,7 +42,7 @@ void t3_addNew1stYearStudents(string path_students, string pathOutput, SchoolYea
 void t4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl);
 void t5_addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear);
 void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem);
-void task7_createCourseSession(string path_createSession, string pathOutput, newCourse& c);
+void t7_createCourseSession(string path_createSession, string pathOutput, newCourse& c);
 void enrollCourse(Student &s, int courseID);
 void viewEnrollCourse(Student &s);
 void removeEnrollCourse(Student &s, int courseID);
