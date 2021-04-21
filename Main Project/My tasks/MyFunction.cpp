@@ -1,5 +1,5 @@
 ﻿#include "MyFunction.h"
-#define foru(i, a, b) for(int i=a; i<=b; i++)
+#define foru(i, a, b) for(int i = a; i <= b; ++i)
 using namespace std;
 
 void loadStaff(string path, SchoolYear& scYear)
@@ -305,7 +305,7 @@ void removeEnrollCourse(Student &s, int courseID)
     foru(i, 0, s.courseCount)
     if (courseID == s.course[i])
     {
-        foru (j, i, s.courseCount - 1) s[j] = s[j+1];
+        foru (j, i, s.courseCount - 1) s[j] = s[j + 1];
         s.courseCount--;
         break;
     }
