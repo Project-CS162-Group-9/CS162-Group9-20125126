@@ -7,7 +7,7 @@ void loadStaff(string path, SchoolYear& scYear)
 	ifstream fin;
 	fin.open(path);
 	if (fin.is_open()) {
-		fin >> scYear.nStaff; fin.ignore(1000, '\n');
+		fin >> scYear.nStaff; fin.ignore();
 		scYear.staffs = new Staff[scYear.nStaff];
 
 		for (int i = 0; i < scYear.nStaff; ++i) {
