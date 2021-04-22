@@ -319,11 +319,11 @@ void task8_addCourse(string path_addCourses, string pathOutput) {
 			}
 		}
 	}
+	
 	else
 		cout << "Can't open file " << endl;
 	fout.close();
 }
-
 void enrollCourse(Student &s, int courseID)
 {
     if (s.courseCount < 5)
