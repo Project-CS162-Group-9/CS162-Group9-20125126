@@ -1,5 +1,5 @@
 ﻿#include "MyFunction.h"
-#define foru(i, a, b) for(int i=a; i<=b; i++)
+#define foru(i, a, b) for(int i = a; i <= b; ++i)
 using namespace std;
 
 void loadStaff(string path, SchoolYear& scYear)
@@ -7,7 +7,7 @@ void loadStaff(string path, SchoolYear& scYear)
 	ifstream fin;
 	fin.open(path);
 	if (fin.is_open()) {
-		fin >> scYear.nStaff; fin.ignore(1000, '\n');
+		fin >> scYear.nStaff; fin.ignore();
 		scYear.staffs = new Staff[scYear.nStaff];
 
 		for (int i = 0; i < scYear.nStaff; ++i) {
@@ -255,7 +255,7 @@ void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester,
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void task7_createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
+void t7_createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
 	ifstream fin;
 	fin.open(path_createSession);
 	if (fin.is_open()) {
@@ -330,5 +330,24 @@ void enrollCourse(Student &s, int courseID)
     {
         foru(i, 0, s.courseCount - 1) if (s.course[i] == courseID) return;
         s.course[++s.courseCount] = courseID;
+    }
+}
+
+void viewEnrollCourse(Student &s)
+{
+    foru(i, 0, s.courseCount)
+    {
+        cout << s.course[i];
+    }
+}
+
+void removeEnrollCourse(Student &s, int courseID)
+{
+    foru(i, 0, s.courseCount)
+    if (courseID == s.course[i])
+    {
+        foru (j, i, s.courseCount - 1) s[j] = s[j + 1];
+        s.courseCount--;
+        break;
     }
 }
