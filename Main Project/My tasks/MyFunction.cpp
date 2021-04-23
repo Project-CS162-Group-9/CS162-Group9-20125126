@@ -324,15 +324,6 @@ void task8_addCourse(string path_addCourses, string pathOutput) {
 		cout << "Can't open file " << endl;
 	fout.close();
 }
-void enrollCourse(Student &s, int courseID)
-{
-    if (s.courseCount < 5)
-    {
-        foru(i, 0, s.courseCount - 1) if (s.course[i] == courseID) return;
-        s.course[++s.courseCount] = courseID;
-    }
-}
-
 void task9_viewListOfCourses(newCourse* nc, int nums) {
 	for (int i = 0; i < nums; i++) {
 		cout << nc[i].ID << endl;
@@ -344,6 +335,15 @@ void task9_viewListOfCourses(newCourse* nc, int nums) {
 		cout << nc[i].credit << endl;
 		cout << nc[i].maxStudent << endl;
 	}
+}
+
+void enrollCourse(Student &s, int courseID)
+{
+    if (s.courseCount < 5)
+    {
+        foru(i, 0, s.courseCount - 1) if (s.course[i] == courseID) return;
+        s.course[++s.courseCount] = courseID;
+    }
 }
 
 void viewEnrollCourse(Student &s)
