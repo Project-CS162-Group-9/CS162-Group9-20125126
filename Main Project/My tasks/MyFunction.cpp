@@ -333,6 +333,19 @@ void enrollCourse(Student &s, int courseID)
     }
 }
 
+void task9_viewListOfCourses(newCourse* nc, int nums) {
+	for (int i = 0; i < nums; i++) {
+		cout << nc[i].ID << endl;
+		cout << nc[i].nameCourses<< endl;
+		cout << nc[i].teacher << endl;
+		cout << nc[i].semester << endl;
+		cout << nc[i].session1 << endl;
+		cout << nc[i].session2 << endl;
+		cout << nc[i].credit << endl;
+		cout << nc[i].maxStudent << endl;
+	}
+}
+
 void viewEnrollCourse(Student &s)
 {
     foru(i, 0, s.courseCount)
