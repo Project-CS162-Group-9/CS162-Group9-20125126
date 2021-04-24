@@ -37,7 +37,6 @@ struct newCourse {
 	int semester;
 };
 
-
 void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);
 void loadSemester(string path, SchoolYear& scYear);
