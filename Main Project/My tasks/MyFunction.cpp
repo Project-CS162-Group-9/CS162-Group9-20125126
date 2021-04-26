@@ -324,7 +324,7 @@ void t8_addCourse(string path_addCourses, string pathOutput) {
 		cout << "Can't open file " << endl;
 	fout.close();
 }
-void task9_viewListOfCourses(newCourse* nc, int nums) {
+void t9_viewListOfCourses(newCourse* nc, int nums) {
 	for (int i = 0; i < nums; i++) {
 		cout << nc[i].ID << endl;
 		cout << nc[i].nameCourses<< endl;
