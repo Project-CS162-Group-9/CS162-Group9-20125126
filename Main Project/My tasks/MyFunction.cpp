@@ -282,7 +282,7 @@ void t7_createCourseSession(string path_createSession, string pathOutput, newCou
 	else cout << "Can not open file \n";
 	fin.close();
 }
-void task8_addCourse(string path_addCourses, string pathOutput) {
+void t8_addCourse(string path_addCourses, string pathOutput) {
 	ifstream fin;
 
 	int nums;
