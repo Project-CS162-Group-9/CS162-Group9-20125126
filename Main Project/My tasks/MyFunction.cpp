@@ -1,5 +1,6 @@
 ﻿#include "MyFunction.h"
 #define foru(i, a, b) for(int i = a; i <= b; ++i)
+#include<iostream>
 using namespace std;
 
 void loadStaff(string path, SchoolYear& scYear)
@@ -282,10 +283,9 @@ void t7_createCourseSession(string path_createSession, string pathOutput, newCou
 	else cout << "Can not open file \n";
 	fin.close();
 }
-void task8_addCourse(string path_addCourses, string pathOutput) {
+void task8_addCourse(string path_addCourses, string pathOutput, int &nums) {
 	ifstream fin;
 
-	int nums;
 	fin >> nums;
 	newCourse* nTemp = new newCourse[nums];
 	fin.open(path_addCourses);
@@ -324,19 +324,13 @@ void task8_addCourse(string path_addCourses, string pathOutput) {
 		cout << "Can't open file " << endl;
 	fout.close();
 }
-void enrollCourse(Student &s, int courseID)
-{
-    if (s.courseCount < 5)
-    {
-        foru(i, 0, s.courseCount - 1) if (s.course[i] == courseID) return;
-        s.course[++s.courseCount] = courseID;
-    }
-}
 
-void task9_viewListOfCourses(newCourse* nc, int nums) {
+void task9_viewListOfCourses(newCourse* &nc, int nums) {
+	int STT;
 	for (int i = 0; i < nums; i++) {
+		cout << "STT" << i + 1;
 		cout << nc[i].ID << endl;
-		cout << nc[i].nameCourses<< endl;
+		cout << nc[i].nameCourses << endl;
 		cout << nc[i].teacher << endl;
 		cout << nc[i].semester << endl;
 		cout << nc[i].session1 << endl;
@@ -344,6 +338,22 @@ void task9_viewListOfCourses(newCourse* nc, int nums) {
 		cout << nc[i].credit << endl;
 		cout << nc[i].maxStudent << endl;
 	}
+	cout << "Input STT to change information course";
+	cin >> STT;
+
+}
+
+
+
+
+
+void enrollCourse(Student &s, int courseID)
+{
+    if (s.courseCount < 5)
+    {
+        foru(i, 0, s.courseCount - 1) if (s.course[i] == courseID) return;
+        s.course[++s.courseCount] = courseID;
+    }
 }
 
 void viewEnrollCourse(Student &s)
