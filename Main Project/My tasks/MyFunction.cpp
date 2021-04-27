@@ -343,6 +343,18 @@ void task9_viewListOfCourses(newCourse* &nc, int nums) {
 
 }
 
+void t10_updateCourseSession(newCourse* crs)
+{
+	cout << "Input new lecturer name:";
+	cin >> crs->teacher;
+	cout << "Input session 1:"; cin >> crs->session1;
+	cout << "Input session 2:"; cin >> crs->session2;
+	cout << "Input day 1:"; cin >> crs->day1;
+	cout << "Input day 2:"; cin >> crs->day2;
+	cout << "Input credit:"; cin >> crs->credit;
+	cout << "Input max student: "; cin >> crs->maxStudent;
+	cout << "Input semester:"; cin >> crs->semester;
+}
 
 
 
