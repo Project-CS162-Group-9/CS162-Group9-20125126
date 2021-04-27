@@ -51,6 +51,7 @@ void t7_createCourseSession(string path_createSession, string pathOutput, newCou
 void t8_addCourse(string path_addCourses, string pathOutput);
 void t9_viewListOfCourses(newCourse* nc, int nums);
 void t10_updateCourseSession(newCourse* crs);
+void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID);
 void enrollCourse(Student &s, int courseID);
 void viewEnrollCourse(Student &s);
 void removeEnrollCourse(Student &s, int courseID);
