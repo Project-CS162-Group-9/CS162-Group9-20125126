@@ -271,6 +271,7 @@ void task24_updateStudentResult(string path_StudentScoreboard, int result, int I
 {
 	// cout << "Enter the ID of student you want to update result
 	searchStudent();
+	loadStudent();
 	loadScoreboard();
 	saveScoreboard();
 }
