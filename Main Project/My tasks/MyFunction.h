@@ -37,7 +37,6 @@ struct newCourse {
 	int semester;
 };
 
-
 void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);
 void loadSemester(string path, SchoolYear& scYear);
@@ -49,6 +48,8 @@ void t4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl
 void t5_addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear);
 void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem);
 void t7_createCourseSession(string path_createSession, string pathOutput, newCourse& c);
+void t8_addCourse(string path_addCourses, string pathOutput);
+void t9_viewListOfCourses(newCourse* nc, int nums);
 void enrollCourse(Student &s, int courseID);
 void viewEnrollCourse(Student &s);
 void removeEnrollCourse(Student &s, int courseID);
