@@ -355,6 +355,14 @@ void t10_updateCourseSession(newCourse* crs)
 	cout << "Input max student: "; cin >> crs->maxStudent;
 	cout << "Input semester:"; cin >> crs->semester;
 }
+void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID)
+{
+	int i;
+	for (i = 0; crs != nullptr; i++)
+		if (crs[i].ID == crsID)
+			break;
+	for (i; crs != nullptr; i++)
+		crs[i] = crs[i + 1];
 
 
 
