@@ -283,7 +283,7 @@ void t7_createCourseSession(string path_createSession, string pathOutput, newCou
 	else cout << "Can not open file \n";
 	fin.close();
 }
-void task8_addCourse(string path_addCourses, string pathOutput, int &nums) {
+void t8_addCourse(string path_addCourses, string pathOutput, int &nums) {
 	ifstream fin;
 
 	fin >> nums;
@@ -324,8 +324,7 @@ void task8_addCourse(string path_addCourses, string pathOutput, int &nums) {
 		cout << "Can't open file " << endl;
 	fout.close();
 }
-
-void task9_viewListOfCourses(newCourse* &nc, int nums) {
+void t9_viewListOfCourses(newCourse* &nc, int nums) {
 	int STT;
 	for (int i = 0; i < nums; i++) {
 		cout << "STT" << i + 1;
@@ -342,7 +341,6 @@ void task9_viewListOfCourses(newCourse* &nc, int nums) {
 	cin >> STT;
 
 }
-
 void t10_updateCourseSession(newCourse* crs)
 {
 	cout << "Input new lecturer name:";
@@ -363,8 +361,7 @@ void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID)
 			break;
 	for (i; crs != nullptr; i++)
 		crs[i] = crs[i + 1];
-
-
+}
 
 
 void enrollCourse(Student &s, int courseID)
