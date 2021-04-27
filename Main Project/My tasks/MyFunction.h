@@ -50,6 +50,7 @@ void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester,
 void t7_createCourseSession(string path_createSession, string pathOutput, newCourse& c);
 void t8_addCourse(string path_addCourses, string pathOutput);
 void t9_viewListOfCourses(newCourse* nc, int nums);
+void t10_updateCourseSession(newCourse* crs);
 void enrollCourse(Student &s, int courseID);
 void viewEnrollCourse(Student &s);
 void removeEnrollCourse(Student &s, int courseID);
