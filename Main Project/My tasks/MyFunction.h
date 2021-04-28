@@ -36,6 +36,11 @@ struct newCourse {
 	int credit, maxStudent;
 	int semester;
 };
+struct Scoreboard{
+	string name Course, ID;
+	Class class;
+	double* total, midterm, final, midterm, other; 
+}
 
 void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);

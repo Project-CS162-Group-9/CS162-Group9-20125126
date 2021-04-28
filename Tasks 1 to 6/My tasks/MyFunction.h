@@ -42,5 +42,13 @@ void task3_addNew1stYearStudents(string path_students, string pathOutput, School
 void task4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl);
 void task5_addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear);
 void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem);
+<<<<<<< HEAD
 
 #endif
+=======
+void loadScoreboard();
+void saveScoreboard();
+bool searchStudent();
+void task24_updateStudentResult(string path_StudentScoreboard, int result,int ID);
+#endif
+>>>>>>> feature

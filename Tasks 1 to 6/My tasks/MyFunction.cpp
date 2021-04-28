@@ -78,6 +78,18 @@ void saveToFile(string path, SchoolYear& scYear)
 	else cout << "Can't open file!\n";
 	fout.close();
 }
+void loadScoreboard()
+{
+
+}
+void saveScoreboard()
+{
+
+}
+bool searchStudent()
+{
+
+}
 void task1_createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear& scYear)
 {
 	//cout << "Pls input Name of School year, like 2020-2021: "; getline(cin, scYear.name);
@@ -256,6 +268,7 @@ void task6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemest
 	else cout << "Can't open file !\n";
 	fout.close();
 }
+<<<<<<< HEAD
 
 void enrollCourse(Student &s, int courseID)
 {
@@ -264,4 +277,13 @@ void enrollCourse(Student &s, int courseID)
         foru(i, 0, s.courseCount - 1) if (s.course[i] == courseID) return;
         s.course[++s.courseCount] = courseID;
     }
+=======
+void task24_updateStudentResult(string path_StudentScoreboard, int result, int ID)
+{
+	// cout << "Enter the ID of student you want to update result
+	searchStudent();
+	loadStudent();
+	loadScoreboard();
+	saveScoreboard();
+>>>>>>> feature
 }
