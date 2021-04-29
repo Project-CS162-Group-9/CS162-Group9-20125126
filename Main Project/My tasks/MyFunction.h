@@ -46,16 +46,18 @@ void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);
 void loadSemester(string path, SchoolYear& scYear);
 void saveToFile(string path, SchoolYear& scYear);
-void t1_createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear& scYear);
-void t2_createClasses1stYearStudent(string path_classes, string pathOutput, SchoolYear& scYear);
-void t3_addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& scYear);
-void t4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl);
-void t5_addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear);
-void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem);
-void t7_createCourseSession(string path_createSession, string pathOutput, newCourse& c);
-void t8_addCourse(string path_addCourses, string pathOutput);
-void t9_viewListOfCourses(newCourse* nc, int nums);
-void t10_updateCourseSession(newCourse* crs);
+void createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear& scYear);
+void createClasses1stYearStudent(string path_classes, string pathOutput, SchoolYear& scYear);
+void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& scYear);
+void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl);
+void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear);
+void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem);
+
+void createCourseSession(string path_createSession, string pathOutput, newCourse& c);
+void addCourse(string path_addCourses, string pathOutput);
+void viewListOfCourses(newCourse* nc, int nums);
+void updateCourseSession(newCourse* crs);
+
 void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID);
 void enrollCourse(Student &s, int courseID);
 void viewEnrollCourse(Student &s);
