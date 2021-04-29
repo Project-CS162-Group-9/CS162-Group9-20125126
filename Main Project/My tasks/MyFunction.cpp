@@ -125,7 +125,7 @@ void saveToFile(string path, SchoolYear& scYear)
 	else cout << "Can't open file!\n";
 	fout.close();
 }
-void t1_createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear& scYear)
+void createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear& scYear)
 {
 	//cout << "Pls input Name of School year, like 2020-2021: "; getline(cin, scYear.name);
 	loadStaff(path_staffs, scYear);
@@ -133,7 +133,7 @@ void t1_createASchoolYear(string path_staffs, string path_classes, string path_s
 	loadSemester(path_semesters, scYear);
 	saveToFile(pathOutput, scYear);
 }
-void t2_createClasses1stYearStudent(string path_classes, string pathOutput, SchoolYear& scYear)
+void createClasses1stYearStudent(string path_classes, string pathOutput, SchoolYear& scYear)
 {
 	loadClass(path_classes, scYear);
 	ofstream fout;
@@ -147,7 +147,7 @@ void t2_createClasses1stYearStudent(string path_classes, string pathOutput, Scho
 	else cout << "Can't open file!\n";
 	fout.close();
 }
-void t3_addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& scYear)
+void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& scYear)
 {
 	ifstream fin;
 	fin.open(path_students);
@@ -192,7 +192,7 @@ void t3_addNew1stYearStudents(string path_students, string pathOutput, SchoolYea
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void t4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl)
+void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl)
 {
 	ifstream fin;
 	fin.open(path_CSV);
@@ -230,7 +230,7 @@ void t4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void t5_addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear)
+void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear)
 {
 	ifstream fin;
 	fin.open(path_students);
@@ -275,7 +275,7 @@ void t5_addOnly1stYearStudentsToClasses(string path_students, string pathOutput,
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem)
+void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem)
 {
 	ifstream fin;
 	fin.open(path_NewSemester);
@@ -302,7 +302,7 @@ void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester,
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void t7_createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
+void createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
 	ifstream fin;
 	fin.open(path_createSession);
 	if (fin.is_open()) {
@@ -329,7 +329,7 @@ void t7_createCourseSession(string path_createSession, string pathOutput, newCou
 	else cout << "Can not open file \n";
 	fin.close();
 }
-void t8_addCourse(string path_addCourses, string pathOutput, int &nums) {
+void addCourse(string path_addCourses, string pathOutput, int &nums) {
 	ifstream fin;
 
 	fin >> nums;
@@ -370,7 +370,7 @@ void t8_addCourse(string path_addCourses, string pathOutput, int &nums) {
 		cout << "Can't open file " << endl;
 	fout.close();
 }
-void t9_viewListOfCourses(newCourse* &nc, int nums) {
+void viewListOfCourses(newCourse* &nc, int nums) {
 	int STT;
 	for (int i = 0; i < nums; i++) {
 		cout << "STT" << i + 1;
@@ -387,7 +387,7 @@ void t9_viewListOfCourses(newCourse* &nc, int nums) {
 	cin >> STT;
 
 }
-void t10_updateCourseSession(newCourse* crs)
+void updateCourseSession(newCourse* crs)
 {
 	cout << "Input new lecturer name:";
 	cin >> crs->teacher;
