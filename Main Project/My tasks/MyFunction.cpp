@@ -383,9 +383,6 @@ void viewListOfCourses(newCourse* &nc, int nums) {
 		cout << nc[i].credit << endl;
 		cout << nc[i].maxStudent << endl;
 	}
-	cout << "Input STT to change information course";
-	cin >> STT;
-
 }
 void updateCourseSession(newCourse* crs)
 {
