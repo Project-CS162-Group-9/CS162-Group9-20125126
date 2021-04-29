@@ -8,8 +8,8 @@ int main()
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 	if (role == 0) 
 	{
-		cout << "Input your work as in Project CS162_requirements (1, 2, 3, 4, 5, 6,...): "; int t; cin >> t;
-		if ( == 1)		
+		cout << "Input your work as in Project's requirements (1, 2, 3, 4, 5, 6,...): "; int t; cin >> t;
+		if (t == 1)		
 			createASchoolYear("_staffs.txt", "_classes.txt", "_semesters.txt", "1_outputSchoolYear.txt", scYear);
 		if (t == 2)		
 			createClasses1stYearStudent("_classes.txt", "2_classes1stYearStudent.txt", scYear);
@@ -27,7 +27,7 @@ int main()
 			createASemester_SchoolyearThatSemesterBelongsTo("_createNewSemester.txt", "6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", sem);
 		}
 	}
-	else // students
+	else // students' work
 	{
 	
 	}
