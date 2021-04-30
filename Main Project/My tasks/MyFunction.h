@@ -39,8 +39,11 @@ struct Scoreboard{
 	string nameCourse, ID;
 	int nums;
 	student* student;
-	double* total,final, midterm, other; 
+	score* score; 
 }
+struct Score{
+	int total, final, midterm, other;
+};
 
 void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);
