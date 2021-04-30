@@ -5,7 +5,7 @@ int main()
 {
 	bool loginOK;
 	SchoolYear scYear;
-
+	Scoreboard scoreboard;
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
@@ -15,7 +15,7 @@ int main()
 		return 0;
 	}
 
-	if (role == 0) 
+	if (role == 0)
 	{
 		while (true) {
 			cout << "Input which work in Project (1, 2, 3,...) Staff want to do, input '0' to stop working: "; int t; cin >> t;
@@ -38,6 +38,35 @@ int main()
 				Semester sem;
 				createASemester_SchoolyearThatSemesterBelongsTo("_createNewSemester.txt", "6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", sem);
 			}
+			if (t == 21)
+			{
+				exportListOfStudentToCSV("listofstudent.txt", "studentCSV.csv");
+				cout << "Your work has been all in CSV File already !\n";
+			}
+			if (t == 22)
+			{
+				importScoreboard("scoreboard.csv", scoreboard);
+				cout << "Now you can view scoreboard of this course: " << endl;
+				viewScoreboardOfCourse(scoreboard);
+			}
+			if (t == 23)
+			{
+				updateAStudentResult("scoreboard.csv", scoreboard);
+				cout << "Your work has been all in CSV File already !\n";
+				cout << "Now you can view scoreboard of this course: " << endl;
+				viewScoreboardOfCourse(scoreboard);
+			}
+			if (t == 25)
+			{
+				cout << "Now you can view scoreboard of your class: " << endl;
+				viewScoreboardOfClass("scoreboardClass.txt");
+			}
+			
+			if (t == 24)
+			{
+				cout << "Now you can view scoreboard of this course: " << endl;
+				viewScoreboardOfCourse(scoreboard);
+			}
 		}
 	}
 	else    // students' work
@@ -45,14 +74,19 @@ int main()
 		while (true) {
 			cout << "Input which work in Project (1, 2, 3,...) a Student want to do, input '0' to stop working: "; int t; cin >> t;
 			if (t == 0) { cout << "Thank you for using out Project !\n"; return 0; }
-			
+
 			if (t == 19) {
 				cout << "You can View list of students in a class (for example: 20APCS1,...):\n";
 				Class c; viewListOfStudentInAClass(c);
 			}
+			if (t == 26)
+			{
+				cout << "Now you can view your scoreboard : " << endl;
+				viewScoreboard1Stu("scoreboard1.txt");
+			}
 
 		}
 	}
-	
+
 	return 0;
 }
