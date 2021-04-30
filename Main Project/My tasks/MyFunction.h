@@ -39,6 +39,7 @@ struct newCourse {
 struct Scoreboard{
 	string nameCourse, ID;
 	int nums;
+	student* student;
 	double* total,final, midterm, other; 
 }
 
