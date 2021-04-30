@@ -366,22 +366,68 @@ void enrollCourse(Student &s, int courseID)
         s.course[++s.courseCount] = courseID;
     }
 }
-void viewEnrollCourse(Student &s)
+oid viewEnrollCourse(Student &s, newCourse* &nc)
 {
     foru(i, 0, s.courseCount)
     {
-        cout << s.course[i];
+        int courseId = s.course[i];
+		cout << "STT" << i + 1;
+		cout << newCourse[courseId].ID << endl;
+		cout << newCourse[courseId].nameCourses << endl;
+		cout << newCourse[courseId].teacher << endl;
+		cout << newCourse[courseId].semester << endl;
+		cout << newCourse[courseId].session1 << endl;
+		cout << newCourse[courseId].session2 << endl;
+		cout << newCourse[courseId].credit << endl;
+		cout << newCourse[courseId].maxStudent << endl;
     }
+    cout << endl;
 }
 void removeEnrollCourse(Student &s, int courseID)
 {
     foru(i, 0, s.courseCount)
     if (courseID == s.course[i])
     {
-        foru (j, i, s.courseCount - 1) s.course[j] = s.course[j + 1];
+        foru (j, i, s.courseCount - 1) s[j] = s[j + 1];
         s.courseCount--;
         break;
     }
+}
+
+void viewStudentCourse(Student &s, newCourse* &nc)
+{
+    foru(i, 0, s.courseCount)
+    {
+        int courseId = s.course[i];
+		cout << "STT" << i + 1;
+		cout << newCourse[courseId].ID << endl;
+		cout << newCourse[courseId].nameCourses << endl;
+		cout << newCourse[courseId].teacher << endl;
+		cout << newCourse[courseId].semester << endl;
+		cout << newCourse[courseId].session1 << endl;
+		cout << newCourse[courseId].session2 << endl;
+		cout << newCourse[courseId].credit << endl;
+		cout << newCourse[courseId].maxStudent << endl;
+    }
+}
+
+void viewListOfClass(SchoolYear &s)
+{
+    foru (i, 0, s.nClass)
+    {
+        cout << left << setw(8) << setfill(" ") << s.classes[i].name;
+        cout << left << setw(8) << setfill(" ") << s.classes[i].year;
+        cout << left << setw(8) << setfill(" ") << "number student:";
+        cout << left << setw(8) << setfill(" ") << s.classes[i].nStudent;
+    }
+    cout << endl;
+}
+
+void viewListOfStudentInClass(Class &c)
+{
+    cout << left << setw(8) << setfill(" ") << c.name << ": ";
+    foru (j, 0, c.nStudent) cout << left << setw(8) << setfill(" ") << c.nStudent[j];
+    cout << endl;
 }
 
 void exportListOfStudentToCSV(string pathIn, string pathOut)

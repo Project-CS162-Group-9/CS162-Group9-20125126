@@ -69,8 +69,12 @@ void viewListOfCourses(newCourse* nc, int nums);
 void updateCourseSession(newCourse* crs);
 void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID);
 void enrollCourse(Student &s, int courseID);
-void viewEnrollCourse(Student &s);
+void viewEnrollCourse(Student &s, newCourse* &nc, int nums);
 void removeEnrollCourse(Student &s, int courseID);
+
+void viewStudentCourse(Student &s, newCourse* &nc);
+void viewListOfClass(SchoolYear &s);
+void viewListOfStudentInClass(Class &c);
 void importScoreboard(string pathIn,string pathOut, Scoreboard& scoreboard);
 void exportListOfStudentToCSV(string pathIn,string pathOut);
 void viewScoreboardOfCourse(Scoreboard& scoreboard);
