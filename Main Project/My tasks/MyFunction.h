@@ -1,5 +1,6 @@
 #ifndef _MYFUNCTION_H_
 #define _MYFUNCTION_H_
+#include<bits/stdc++.h>
 using namespace std;
 
 struct Date {
@@ -35,12 +36,12 @@ struct newCourse {
 	int credit, maxStudent;
 	int semester;
 };
-struct Scoreboard{
+struct Scoreboard {
 	string nameCourse, ID;
 	int nums;
-	student* student;
-	double* total,final, midterm, other; 
-}
+	Student* student;
+	double* total, final, midterm, other;
+};
 
 void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);

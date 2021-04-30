@@ -1,30 +1,8 @@
-﻿#include "Global.h"
-#include<bits/stdc++.h>
+﻿#include "MyFunction.h"
+
 #define foru(i, a, b) for(int i = a; i <= b; ++i)
 
 using namespace std;
-
-void loadScoreboard();
-void loadListStudentOfCourse(string pathIn, Student* &student,string pathOut)
-{
-	int nums;
-	ifstream fin;
-	fin >> nums;
-	student* student = new Student[nums];
-	fin.open(pathIn);
-	if(fin.is_open()){
-		for(int i = 0;i<nums;i++)
-		{
-			getline(fin,student[i].No);
-			getline(fin,student[i].studentID);
-			getline(fin,student[i].firstName);
-			getline(fin,student[i].lastName);
-		}
-	}
-	else
-		cout << "Can not open file \n";
-	fin.close();
-}
 
 void loadStaff(string path, SchoolYear& scYear)
 {
@@ -59,33 +37,6 @@ void loadClass(string path, SchoolYear& scYear)
 	}
 	else cout << "Can't open file!\n";
 	fin.close();
-}
-void loadListOfStudent(string path, Student* student,string nameClass)
-{
-	ifstream fin;
-	fin.open(path);
-	if (fin.is_open()) {
-		fin << "\tClass 20APCS1:\n";
-		for (int i = 0; i < nTemp; ++i)
-			if (temps[i].year ==1 && temps[i].studentID[4] == '5') {
-				fin<< temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
-				fout << '\n';
-			}
-		fin << "\tClass 20CLC1:\n";
-		for (int i = 0; i < nTemp; ++i)
-			if (temps[i].year == 1 && temps[i].studentID[4] == '7') {
-				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
-				fout << '\n';
-			}
-		fout << "\tClass 20VP:\n";
-		for (int i = 0; i < nTemp; ++i)
-			if (temps[i].year == 1 && temps[i].studentID[4] == '6') {
-				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
-				fout << '\n';
-			}
-	}
-	else cout << "Can't open file !\n";
-	fout.close();
 }
 void loadSemester(string path, SchoolYear& scYear)
 {
@@ -305,6 +256,7 @@ void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, st
 	else cout << "Can't open file !\n";
 	fout.close();
 }
+
 void createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
 	ifstream fin;
 	fin.open(path_createSession);
@@ -348,11 +300,11 @@ void addCourse(string path_addCourses, string pathOutput, int &nums) {
 			fin >> nTemp[i].maxStudent;
 			fin >> nTemp[i].credit;
 		}
-		
 	}
 	else
 		cout << "Can not open file \n";
 	fin.close();
+
 	ofstream fout;
 	fout.open(pathOutput);
 	if (fout.is_open()) {
@@ -368,13 +320,11 @@ void addCourse(string path_addCourses, string pathOutput, int &nums) {
 			}
 		}
 	}
-	
 	else
 		cout << "Can't open file " << endl;
 	fout.close();
 }
 void viewListOfCourses(newCourse* &nc, int nums) {
-	int STT;
 	for (int i = 0; i < nums; i++) {
 		cout << "STT" << i + 1;
 		cout << nc[i].ID << endl;
@@ -428,10 +378,33 @@ void removeEnrollCourse(Student &s, int courseID)
     foru(i, 0, s.courseCount)
     if (courseID == s.course[i])
     {
-        foru (j, i, s.courseCount - 1) s[j] = s[j + 1];
+        foru (j, i, s.courseCount - 1) s.course[j] = s.course[j + 1];
         s.courseCount--;
         break;
     }
+}
+
+/*	-Phương-
+void loadScoreboard();
+void loadListStudentOfCourse(string pathIn, Student*& student, string pathOut)
+{
+	int nums;
+	ifstream fin;
+	fin >> nums;
+	student* student = new Student[nums];
+	fin.open(pathIn);
+	if (fin.is_open()) {
+		for (int i = 0; i < nums; i++)
+		{
+			getline(fin, student[i].No);
+			getline(fin, student[i].studentID);
+			getline(fin, student[i].firstName);
+			getline(fin, student[i].lastName);
+		}
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
 }
 void exportListOfStudentToCSV(string pathIn,string pathOut)
 {
@@ -465,7 +438,7 @@ void exportListOfStudentToCSV(string pathIn,string pathOut)
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void importScoreboard(string pathIn,stringpathOut, Scoreboard*& scoreboard)
+void importScoreboard(string pathIn, string pathOut, Scoreboard*& scoreboard)
 {
 	int nums;
 	ifstream fin;
@@ -490,7 +463,35 @@ void importScoreboard(string pathIn,stringpathOut, Scoreboard*& scoreboard)
 	fin.close();
 	 
 }
+void loadListOfStudent(string path, Student* student, string nameClass)
+{
+	ifstream fin;
+	fin.open(path);
+	if (fin.is_open()) {
+		fin << "\tClass 20APCS1:\n";
+		for (int i = 0; i < nTemp; ++i)
+			if (temps[i].year == 1 && temps[i].studentID[4] == '5') {
+				fin << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
+				fout << '\n';
+			}
+		fin << "\tClass 20CLC1:\n";
+		for (int i = 0; i < nTemp; ++i)
+			if (temps[i].year == 1 && temps[i].studentID[4] == '7') {
+				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
+				fout << '\n';
+			}
+		fout << "\tClass 20VP:\n";
+		for (int i = 0; i < nTemp; ++i)
+			if (temps[i].year == 1 && temps[i].studentID[4] == '6') {
+				fout << temps[i].studentID << '\n' << temps[i].firstName << " " << temps[i].lastName << '\n' << temps[i].gender << '\n' << temps[i].DOB << '\n' << "Social ID: " << temps[i].socialID << '\n';
+				fout << '\n';
+			}
+	}
+	else cout << "Can't open file !\n";
+	fout.close();
+}
 void viewScoreboard(string pathIn, string pathOut, Scoreboard* scoreboard)
 {
 	
 }
+*/
