@@ -4,28 +4,6 @@
 
 using namespace std;
 
-void loadScoreboard();
-void loadListStudentOfCourse(string pathIn, Student* &student,string pathOut)
-{
-	int nums;
-	ifstream fin;
-	fin >> nums;
-	student* student = new Student[nums];
-	fin.open(pathIn);
-	if(fin.is_open()){
-		for(int i = 0;i<nums;i++)
-		{
-			getline(fin,student[i].No);
-			getline(fin,student[i].studentID);
-			getline(fin,student[i].firstName);
-			getline(fin,student[i].lastName);
-		}
-	}
-	else
-		cout << "Can not open file \n";
-	fin.close();
-}
-
 void loadStaff(string path, SchoolYear& scYear)
 {
 	ifstream fin;
@@ -433,64 +411,134 @@ void removeEnrollCourse(Student &s, int courseID)
         break;
     }
 }
-void exportListOfStudentToCSV(string pathIn,string pathOut)
+void exportListOfStudentToCSV(string pathIn, string pathOut)
 {
-    
- 	int nums;
+
+	int nums;
 	ifstream fin;
-	fin >> nums;
-	student* student = new Student[nums];
 	fin.open(pathIn);
-	if(fin.is_open()){
-		for(int i = 0;i<nums;i++)
+	if (fin.is_open()) {
+		fin >> nums;
+		Student* student = new Student[nums];
+		for (int i = 0; i < nums; i++)
 		{
-			getline(fin,student[i].No);
-			getline(fin,student[i].studentID);
-			getline(fin,student[i].firstName);
-			getline(fin,student[i].lastName);
+			cout << student[i].No;
+			getline(fin, student[i].No);
+			getline(fin, student[i].studentID);
+			getline(fin, student[i].firstName);
+			getline(fin, student[i].lastName);
+		}
+		ofstream fout;
+		fout.open(pathOut);
+		if (fout.is_open())
+		{
+			for (int i = 0; i < nums; i++)
+			{
+				fout << student[i].No << "," << student[i].studentID << "," << student[i].firstName << student[i].lastName;
+			}
+		}
+		else cout << "Can't open file !\n";
+		fout.close();
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+
+}
+void importScoreboard(string pathIn, string pathOut, Scoreboard& scoreboard)
+{
+	ifstream fin;
+	fin.open(pathIn);
+	if (fin.is_open()) {
+		fin >> scoreboard.nums;
+
+		for (int i = 0; i < scoreboard.nums; i++)
+		{
+			getline(fin, scoreboard.student[i].No, ',');
+			getline(fin, scoreboard.student[i].studentID, ',');
+			getline(fin, scoreboard.student[i].firstName, ',');
+			getline(fin, scoreboard.student[i].lastName, ',');
+			string Total,Final,Midterm,Other;
+			getline(fin, Total, ',');
+			getline(fin, Final, ',');
+			getline(fin, Midterm, ',');
+			getline(fin, Other, '\n');
+			scoreboard.score[i].total = stoi(Total);
+			scoreboard.score[i].final = stoi(Final);
+			scoreboard.score[i].midterm = stoi(Midterm);
+			scoreboard.score[i].other = stoi(Other);
+		}
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+
+}
+void viewScoreboardOfCourse(Scoreboard& scoreboard)
+{
+	for (int i = 0; i < scoreboard.nums; i++)
+	{
+		cout << scoreboard.student[i].No << ',';
+		cout << scoreboard.student[i].studentID, ',';
+		cout << scoreboard.student[i].firstName, ',';
+		cout << scoreboard.student[i].lastName, ',';
+		cout << scoreboard.score[i].total, ',';
+		cout << scoreboard.score[i].final, ',';
+		cout << scoreboard.score[i].midterm, ',';
+		cout << scoreboard.score[i].other << '\n';
+	}
+}
+void updateAStudentResult(string path, Scoreboard& scoreboard)
+{
+	ifstream fin;
+	fin.open(path);
+	if (fin.is_open()) {
+		fin >> scoreboard.nums;
+
+		for (int i = 0; i < scoreboard.nums; i++)
+		{
+			getline(fin, scoreboard.student[i].No, ',');
+			getline(fin, scoreboard.student[i].studentID, ',');
+			getline(fin, scoreboard.student[i].firstName, ',');
+			getline(fin, scoreboard.student[i].lastName, ',');
+			string Total, Final, Midterm, Other;
+			getline(fin, Total, ',');
+			getline(fin, Final, ',');
+			getline(fin, Midterm, ',');
+			getline(fin, Other, '\n');
+			scoreboard.score[i].total = stoi(Total);
+			scoreboard.score[i].final = stoi(Final);
+			scoreboard.score[i].midterm = stoi(Midterm);
+			scoreboard.score[i].other = stoi(Other);
 		}
 	}
 	else
 		cout << "Can not open file \n";
 	fin.close();
 	ofstream fout;
-	fout.open(pathOut);
-	if (fout.is_open()) 
+	fout.open(path);
+	if (fout.is_open())
 	{
-	for (i=0; i<nums;i++)
-	{
-		fout << student[i].No <<","<< student[i].studentID << ","<<student[i].firstName<< student[i].lastName;
-	}
-	}
-	else cout << "Can't open file !\n";
-	fout.close();
-}
-void importScoreboard(string pathIn,stringpathOut, Scoreboard*& scoreboard)
-{
-	int nums;
-	ifstream fin;
-	fin >> nums;
-	Scoreborad* scoreboard = new scoreboard[nums];
-	fin.open(pathIn);
-	if(fin.is_open()){
-		for(int i = 0;i<nums;i++)
+		fout << scoreboard.nums;
+		for (int i = 0; i < scoreboard.nums; i++)
 		{
-			getline(fin,scoreboard[i].No);
-			getline(fin,scoreboard[i].studentID);
-			getline(fin,scoreboard[i].firstName);
-			getline(fin,scoreboard[i].lastName);
-			getline(fin,scoreboard[i].total);
-			getline(fin,scoreboard[i].final);
-			getline(fin,scoreboard[i].midterm);
-			getline(fin,scoreboard[i].other);
+			fout << scoreboard.student[i].No << ',';
+			fout << scoreboard.student[i].studentID, ',';
+			fout << scoreboard.student[i].firstName, ',';
+			fout << scoreboard.student[i].lastName, ',';
+			fout << scoreboard.score[i].total, ',';
+			fout << scoreboard.score[i].final, ',';
+			fout << scoreboard.score[i].midterm, ',';
+			fout << scoreboard.score[i].other << '\n';
 		}
 	}
 	else
 		cout << "Can not open file \n";
-	fin.close();
-	 
+	fout.close();
 }
-void viewScoreboard(string pathIn, string pathOut, Scoreboard* scoreboard)
+void viewScoreboardOfClass(string pathIn)
 {
 	
 }
+
+
