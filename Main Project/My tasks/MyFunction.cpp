@@ -441,6 +441,31 @@ void exportListOfStudentToCSV(string pathIn,string pathOut)
 	else cout << "Can't open file !\n";
 	fout.close();
 }
+void importScoreboard(string pathIn,stringpathOut, Scoreboard*& scoreboard)
+{
+	int nums;
+	ifstream fin;
+	fin >> nums;
+	Scoreborad* scoreboard = new scoreboard[nums];
+	fin.open(pathIn);
+	if(fin.is_open()){
+		for(int i = 0;i<nums;i++)
+		{
+			getline(fin,scoreboard[i].No);
+			getline(fin,scoreboard[i].studentID);
+			getline(fin,scoreboard[i].firstName);
+			getline(fin,scoreboard[i].lastName);
+			getline(fin,scoreboard[i].total);
+			getline(fin,scoreboard[i].final);
+			getline(fin,scoreboard[i].midterm);
+			getline(fin,scoreboard[i].other);
+		}
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+	 
+}
 void viewScoreboard(string pathIn, string pathOut, Scoreboard* scoreboard)
 {
 	
