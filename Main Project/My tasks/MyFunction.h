@@ -39,7 +39,7 @@ struct newCourse {
 struct Scoreboard{
 	string name Course, ID;
 	Class class;
-	double* total, midterm, final, midterm, other; 
+	double* total,final, midterm, other; 
 }
 
 void loadStaff(string path, SchoolYear& scYear);
