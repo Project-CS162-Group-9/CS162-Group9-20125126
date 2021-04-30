@@ -1,7 +1,9 @@
-﻿#include "MyFunction.h"
+﻿#include "Global.h"
+#include<bits/stdc++.h>
 #define foru(i, a, b) for(int i = a; i <= b; ++i)
-#include<iostream>
+
 using namespace std;
+
 void loadScoreboard();
 void loadListStudentOfCourse(string pathIn, Student* &student,string pathOut)
 {

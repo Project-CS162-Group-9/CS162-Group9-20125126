@@ -1,6 +1,5 @@
 #ifndef _MYFUNCTION_H_
 #define _MYFUNCTION_H_
-#include<bits/stdc++.h>
 using namespace std;
 
 struct Date {
