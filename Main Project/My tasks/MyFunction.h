@@ -36,9 +36,10 @@ struct newCourse {
 	int semester;
 };
 struct Scoreboard{
-	string name Course, ID;
-	Class class;
-	double* total, midterm, final, midterm, other; 
+	string nameCourse, ID;
+	int nums;
+	student* student;
+	double* total,final, midterm, other; 
 }
 
 void loadStaff(string path, SchoolYear& scYear);
