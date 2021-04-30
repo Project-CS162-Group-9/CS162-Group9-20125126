@@ -2,27 +2,6 @@
 #define foru(i, a, b) for(int i = a; i <= b; ++i)
 #include<iostream>
 using namespace std;
-void loadScoreboard();
-void loadListStudentOfCourse(string pathIn, Student* &student,string pathOut)
-{
-	int nums;
-	ifstream fin;
-	fin >> nums;
-	student* student = new Student[nums];
-	fin.open(pathIn);
-	if(fin.is_open()){
-		for(int i = 0;i<nums;i++)
-		{
-			getline(fin,student[i].No);
-			getline(fin,student[i].studentID);
-			getline(fin,student[i].firstName);
-			getline(fin,student[i].lastName);
-		}
-	}
-	else
-		cout << "Can not open file \n";
-	fin.close();
-}
 void loadStaff(string path, SchoolYear& scYear)
 {
 	ifstream fin;
@@ -430,18 +409,31 @@ void removeEnrollCourse(Student &s, int courseID)
         break;
     }
 }
-int countStudent(student* student)
-{
-
-}
-void t21_exportListOfStudentToCSV(string pathIn, Student* student,string pathOut)
+void exportListOfStudentToCSV(string pathIn,string pathOut)
 {
     
+ 	int nums;
+	ifstream fin;
+	fin >> nums;
+	student* student = new Student[nums];
+	fin.open(pathIn);
+	if(fin.is_open()){
+		for(int i = 0;i<nums;i++)
+		{
+			getline(fin,student[i].No);
+			getline(fin,student[i].studentID);
+			getline(fin,student[i].firstName);
+			getline(fin,student[i].lastName);
+		}
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
 	ofstream fout;
 	fout.open(pathOut);
 	if (fout.is_open()) 
 	{
-	for (i=0; i<countStudent(student);i++)
+	for (i=0; i<nums;i++)
 	{
 		fout << student[i].No <<","<< student[i].studentID << ","<<student[i].firstName<< student[i].lastName;
 	}
@@ -449,8 +441,7 @@ void t21_exportListOfStudentToCSV(string pathIn, Student* student,string pathOut
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void t26_viewScoreboard(string pathIn, string pathOut, Scoreboard* scoreboard)
+void viewScoreboard(string pathIn, string pathOut, Scoreboard* scoreboard)
 {
 	
-
 }
