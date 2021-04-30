@@ -1,6 +1,9 @@
 #ifndef _MYFUNCTION_H_
 #define _MYFUNCTION_H_
-#include<bits/stdc++.h>
+#include<iostream>
+#include<fstream>
+#include<string>
+
 using namespace std;
 
 struct Date {
@@ -36,12 +39,17 @@ struct newCourse {
 	int credit, maxStudent;
 	int semester;
 };
+
+struct Score {
+	int total, final, midterm, other;
+};
 struct Scoreboard {
+	Score* score;
 	string nameCourse, ID;
 	int nums;
 	Student* student;
-	double* total, final, midterm, other;
 };
+
 
 void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);
@@ -53,15 +61,17 @@ void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& 
 void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl);
 void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear);
 void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem);
-
 void createCourseSession(string path_createSession, string pathOutput, newCourse& c);
 void addCourse(string path_addCourses, string pathOutput);
 void viewListOfCourses(newCourse* nc, int nums);
 void updateCourseSession(newCourse* crs);
-
 void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID);
 void enrollCourse(Student &s, int courseID);
 void viewEnrollCourse(Student &s);
 void removeEnrollCourse(Student &s, int courseID);
-
+void importScoreboard(string pathIn,string pathOut, Scoreboard& scoreboard);
+void exportListOfStudentToCSV(string pathIn,string pathOut);
+void viewScoreboardOfCourse(Scoreboard& scoreboard);
+void updateAStudentResult(string path, Scoreboard& scoreboard);
+void viewScoreboardOfClass(string pathIn);
 #endif
