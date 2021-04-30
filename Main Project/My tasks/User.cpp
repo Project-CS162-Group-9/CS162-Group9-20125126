@@ -1,5 +1,4 @@
 #include"User.h"
-
 using namespace std;
 
 void readData(string pathIn, User& usr)
