@@ -38,8 +38,8 @@ struct newCourse {
 struct Scoreboard{
 	string nameCourse, ID;
 	int nums;
-	student* student;
-	score* score; 
+	Student* student;
+	Score* score; 
 }
 struct Score{
 	int total, final, midterm, other;
