@@ -46,15 +46,12 @@ int main()
 			if (t == 22)
 			{
 				importScoreboard("scoreboard.csv", scoreboard);
-				cout << "Now you can view scoreboard of this course: " << endl;
-				viewScoreboardOfCourse(scoreboard);
+				cout << "Successfully. Now you can see the scoreboard that you just import!!"<< endl;
 			}
 			if (t == 23)
 			{
 				updateAStudentResult("scoreboard.csv", scoreboard);
 				cout << "Your work has been all in CSV File already !\n";
-				cout << "Now you can view scoreboard of this course: " << endl;
-				viewScoreboardOfCourse(scoreboard);
 			}
 			if (t == 25)
 			{
@@ -64,7 +61,7 @@ int main()
 			
 			if (t == 24)
 			{
-				cout << "Now you can view scoreboard of this course: " << endl;
+				cout << "Scoreboard of this course: " << endl;
 				viewScoreboardOfCourse(scoreboard);
 			}
 		}
