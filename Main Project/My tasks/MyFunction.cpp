@@ -509,7 +509,83 @@ void updateAStudentResult(string path, Scoreboard& scoreboard)
 		cout << "Can not open file \n";
 	fout.close();
 }
-void viewScoreboardOfClass(string pathIn)
+void viewScoreboardOfClass(string path)
 {
-
+	Class clas;
+	ifstream fin;
+	fin.open(path);
+	if (fin.is_open())
+	{
+		getline(fin, clas.name);
+		fin >> clas.nStudent;
+		for (int i = 0; i < clas.nStudent; i++)
+		{
+			getline(fin, clas.students[i].No);
+			getline(fin, clas.students[i].studentID);
+			getline(fin, clas.students[i].firstName);
+			getline(fin, clas.students[i].lastName);
+			fin >> clas.students[i].courseCount;
+			for (int j = 0; j < clas.students[i].courseCount; j++)
+			{
+				fin >> clas.students[i].finall[j];
+			}
+			fin >> clas.students[i].semesterGPA;
+			fin >> clas.students[i].overallGPA;
+		}
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+	cout << "Class name: "<< clas.name << endl;
+	cout << "Number of student: " <<clas.nStudent << endl;
+	for (int i = 0; i < clas.nStudent; i++)
+	{
+		cout << "No: " << clas.students[i].No << endl;
+		cout << "ID: " << clas.students[i].studentID << endl;;
+		cout << "Name: " << clas.students[i].firstName <<" ";
+		cout << clas.students[i].lastName << endl;;
+		cout << " Number of courses: " << clas.students[i].courseCount << endl;
+		for (int j = 0; j < clas.students[i].courseCount; j++)
+		{
+			cout << " Final mark of course " << j << ":" << clas.students[i].finall[j] << endl;
+		}
+		cout << "Semseter GPA: "<< clas.students[i].semesterGPA<<endl;
+		cout << "Overall GPA: " << clas.students[i].overallGPA << endl;
+		cout << endl;
+	}
+}
+void viewScoreboard1Stu(string path)
+{
+	Student student;
+	ifstream fin;
+	fin.open(path);
+	if (fin.is_open())
+	{
+			getline(fin, student.No);
+			getline(fin, student.studentID);
+			getline(fin, student.firstName);
+			getline(fin, student.lastName);
+			fin >> student.courseCount;
+			for (int j = 0; j < student.courseCount; j++)
+			{
+				fin >> student.finall[j];
+			}
+			fin >> student.semesterGPA;
+			fin >> student.overallGPA;
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+		cout << "No: " << student.No << endl;
+		cout << "ID: " << student.studentID << "  ";
+		cout << "Name: " << student.firstName << " ";
+		cout << student.lastName << endl;
+		cout << " Number of courses: " << student.courseCount << endl;
+		for (int j = 0; j < student.courseCount; j++)
+		{
+			cout << " Final mark of course " << j << ":" << student.finall[j] << endl;
+		}
+		cout << "Semseter GPA: " << student.semesterGPA << endl;
+		cout << "Overall GPA: " << student.overallGPA << endl;
+		cout << endl;
 }

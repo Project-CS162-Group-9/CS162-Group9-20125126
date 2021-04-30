@@ -17,6 +17,8 @@ struct Student {
 	string No, studentID, firstName, lastName, gender, DOB, socialID;
 	int course[6];
 	int courseCount;
+	double semesterGPA, overallGPA;
+	double* finall;
 };
 struct Class {
 	int year;
@@ -73,5 +75,6 @@ void importScoreboard(string pathIn,string pathOut, Scoreboard& scoreboard);
 void exportListOfStudentToCSV(string pathIn,string pathOut);
 void viewScoreboardOfCourse(Scoreboard& scoreboard);
 void updateAStudentResult(string path, Scoreboard& scoreboard);
-void viewScoreboardOfClass(string pathIn);
+void viewScoreboardOfClass(string path);
+void viewScoreboard1Stu(string path);
 #endif
