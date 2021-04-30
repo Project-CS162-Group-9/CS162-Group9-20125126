@@ -431,6 +431,9 @@ void removeEnrollCourse(Student &s, int courseID)
     }
 }
 int countStudent(student* student)
+{
+
+}
 void t21_exportListOfStudentToCSV(string pathIn, Student* student,string pathOut)
 {
     
