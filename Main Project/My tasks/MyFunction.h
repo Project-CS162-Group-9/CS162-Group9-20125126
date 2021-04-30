@@ -3,6 +3,7 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<iomanip>
 
 using namespace std;
 
@@ -74,7 +75,7 @@ void removeEnrollCourse(Student &s, int courseID);
 
 void viewStudentCourse(Student &s, newCourse* &nc);
 void viewListOfClass(SchoolYear &s);
-void viewListOfStudentInClass(Class &c);
+void viewListOfStudentInAClass(Class &c);
 void importScoreboard(string pathIn,string pathOut, Scoreboard& scoreboard);
 void exportListOfStudentToCSV(string pathIn,string pathOut);
 void viewScoreboardOfCourse(Scoreboard& scoreboard);

@@ -366,20 +366,21 @@ void enrollCourse(Student &s, int courseID)
         s.course[++s.courseCount] = courseID;
     }
 }
-oid viewEnrollCourse(Student &s, newCourse* &nc)
+void viewEnrollCourse(Student &s, newCourse* &nc)
 {
+	newCourse* newCourses = new newCourse[s.courseCount];
     foru(i, 0, s.courseCount)
     {
         int courseId = s.course[i];
 		cout << "STT" << i + 1;
-		cout << newCourse[courseId].ID << endl;
-		cout << newCourse[courseId].nameCourses << endl;
-		cout << newCourse[courseId].teacher << endl;
-		cout << newCourse[courseId].semester << endl;
-		cout << newCourse[courseId].session1 << endl;
-		cout << newCourse[courseId].session2 << endl;
-		cout << newCourse[courseId].credit << endl;
-		cout << newCourse[courseId].maxStudent << endl;
+		cout << newCourses[courseId].ID << endl;
+		cout << newCourses[courseId].nameCourses << endl;
+		cout << newCourses[courseId].teacher << endl;
+		cout << newCourses[courseId].semester << endl;
+		cout << newCourses[courseId].session1 << endl;
+		cout << newCourses[courseId].session2 << endl;
+		cout << newCourses[courseId].credit << endl;
+		cout << newCourses[courseId].maxStudent << endl;
     }
     cout << endl;
 }
@@ -388,7 +389,7 @@ void removeEnrollCourse(Student &s, int courseID)
     foru(i, 0, s.courseCount)
     if (courseID == s.course[i])
     {
-        foru (j, i, s.courseCount - 1) s[j] = s[j + 1];
+//        foru (j, i, s.courseCount - 1) s[j] = s[j + 1];
         s.courseCount--;
         break;
     }
@@ -396,18 +397,19 @@ void removeEnrollCourse(Student &s, int courseID)
 
 void viewStudentCourse(Student &s, newCourse* &nc)
 {
+	newCourse* newCourses = new newCourse[s.courseCount];
     foru(i, 0, s.courseCount)
     {
         int courseId = s.course[i];
 		cout << "STT" << i + 1;
-		cout << newCourse[courseId].ID << endl;
-		cout << newCourse[courseId].nameCourses << endl;
-		cout << newCourse[courseId].teacher << endl;
-		cout << newCourse[courseId].semester << endl;
-		cout << newCourse[courseId].session1 << endl;
-		cout << newCourse[courseId].session2 << endl;
-		cout << newCourse[courseId].credit << endl;
-		cout << newCourse[courseId].maxStudent << endl;
+		cout << newCourses[courseId].ID << endl;
+		cout << newCourses[courseId].nameCourses << endl;
+		cout << newCourses[courseId].teacher << endl;
+		cout << newCourses[courseId].semester << endl;
+		cout << newCourses[courseId].session1 << endl;
+		cout << newCourses[courseId].session2 << endl;
+		cout << newCourses[courseId].credit << endl;
+		cout << newCourses[courseId].maxStudent << endl;
     }
 }
 
@@ -415,19 +417,47 @@ void viewListOfClass(SchoolYear &s)
 {
     foru (i, 0, s.nClass)
     {
-        cout << left << setw(8) << setfill(" ") << s.classes[i].name;
-        cout << left << setw(8) << setfill(" ") << s.classes[i].year;
-        cout << left << setw(8) << setfill(" ") << "number student:";
-        cout << left << setw(8) << setfill(" ") << s.classes[i].nStudent;
+        cout << left << setw(8) /*<< setfill(" ")*/ << s.classes[i].name;
+        cout << left << setw(8) /*<< setfill(" ")*/ << s.classes[i].year;
+        cout << left << setw(8) /*<< setfill(" ")*/ << "number student:";
+        cout << left << setw(8) /*<< setfill(" ")*/ << s.classes[i].nStudent;
     }
     cout << endl;
 }
 
-void viewListOfStudentInClass(Class &c)
+void viewListOfStudentInAClass(Class &c)
 {
-    cout << left << setw(8) << setfill(" ") << c.name << ": ";
+    /*cout << left << setw(8) << setfill(" ") << c.name << ": ";
     foru (j, 0, c.nStudent) cout << left << setw(8) << setfill(" ") << c.nStudent[j];
-    cout << endl;
+    cout << endl;*/
+
+	ifstream fin; fin.open("_CSV file.csv");
+
+	fin >> c.nStudent; fin.ignore();
+	c.students = new Student[c.nStudent];
+
+	getline(fin, c.name);
+	for (int i = 0; i < c.nStudent; ++i) {
+		getline(fin, c.students[i].No, ',');
+		getline(fin, c.students[i].studentID, ',');
+		getline(fin, c.students[i].firstName, ',');
+		getline(fin, c.students[i].lastName, ',');
+		getline(fin, c.students[i].gender, ',');
+		getline(fin, c.students[i].DOB, ',');
+		getline(fin, c.students[i].socialID, '\n');
+	}
+	fin.close();
+
+	cout << "Class " << c.name << '\n';
+	for (int j = 0; j < c.nStudent; ++j) {
+		cout << "No: " << c.students[j].No << '\n';
+		cout << "Student ID: " << c.students[j].studentID << '\n';
+		cout << "First name: " << c.students[j].firstName << '\n';
+		cout << "Last name: " << c.students[j].lastName << '\n';
+		cout << "Gender: " << c.students[j].gender << '\n';
+		cout << "Date of Birth: " << c.students[j].DOB << '\n';
+		cout << "Social ID: " << c.students[j].socialID << '\n' << '\n';
+	}
 }
 
 void exportListOfStudentToCSV(string pathIn, string pathOut)

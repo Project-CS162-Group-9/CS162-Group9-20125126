@@ -38,6 +38,7 @@ void login(int role, bool& loginOK)
 			{
 				if (username == usr.user_staffs[i].username) 
 				{
+					timeStop = 5;
 					do {
 						cout << "Pls input your Password: "; getline(cin, password);
 						if (password == usr.user_staffs[i].password)
@@ -47,7 +48,8 @@ void login(int role, bool& loginOK)
 						}
 						else cout << "Your password is incorrect ! Pls input again !\n";
 					} while (--timeStop);
-					cout << "You have inputted over 5 times wrong password ! Pls try again !\n";
+					cout << "You have inputted over 5 times wrong password ! Pls try again !\n\n\n" << "Try the Password again:\n";
+					i = 0; continue;
 				}
 			}
 			system("cls");
@@ -64,6 +66,7 @@ void login(int role, bool& loginOK)
 			{
 				if (username == usr.user_students[i].username)
 				{
+					timeStop = 5;
 					do {
 						cout << "Pls input your Password: "; getline(cin, password);
 						if (password == usr.user_students[i].password)
@@ -73,7 +76,8 @@ void login(int role, bool& loginOK)
 						}
 						else cout << "Your password is incorrect ! Pls input again !\n";
 					} while (--timeStop);
-					cout << "You have inputted over 5 times wrong password ! Pls try again !\n";
+					cout << "You have inputted over 5 times wrong password ! Pls try again !\n\n\n" << "Try the Password again:\n";
+					i = 0; continue;
 				}
 			}
 			system("cls");
