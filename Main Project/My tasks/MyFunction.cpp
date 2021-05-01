@@ -1,7 +1,7 @@
 ﻿#include "MyFunction.h"
 #define foru(i, a, b) for (int i = a; i <= b; ++i)
 #include <iostream>
-#include<fstream>
+#include <fstream>
 using namespace std;
 
 void loadStaff(string path, SchoolYear &scYear)
@@ -340,19 +340,21 @@ void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester,
 		cout << "Can't open file !\n";
 	fout.close();
 }
-void createCourseSession(string pathOutput, newCourse& c)
+void createCourseSession(string pathOutput, newCourse &c)
 {
 	cout << "Date open the course registion: " << endl;
 	cin >> c.day1;
 	cout << "Date close the course registion: " << endl;
 	cin >> c.day2;
-	ofstream fout; 
+	ofstream fout;
 	fout.open(pathOutput);
-	if (fout.is_open()) {
+	if (fout.is_open())
+	{
 		fout << "Date open the course registion: " << c.day1 << endl;
 		fout << "Date close the course registion: " << c.day2 << endl;
 	}
-	else cout << "Can not open file \n";
+	else
+		cout << "Can not open file \n";
 	fout.close();
 }
 
@@ -462,7 +464,7 @@ void t10_updateCourseSession(newCourse *crs)
 	cout << "Input semester:";
 	cin >> crs->semester;
 }
-void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID)
+void deleteCourse(SchoolYear *schYear, newCourse *crs, string crsID)
 {
 	int i;
 	for (i = 0; crs != nullptr; i++)
@@ -470,8 +472,6 @@ void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID)
 			break;
 	for (i; crs != nullptr; i++)
 		crs[i] = crs[i + 1];
-
-
 }
 void enrollCourse(Student &s, int courseID)
 {
