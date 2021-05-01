@@ -38,17 +38,9 @@ int main()
 				importCSVFileStudent1Class("_CSV file.csv", "4_studentsIn1ClassFromCSVfile.txt", cl);
 				cout << "Your work has been all in Text File already !\n";
 			}
-<<<<<<< HEAD
 			if (t == 5)
 				{addOnly1stYearStudentsToClasses("_students.txt", "5_AddOnly1stYearStudents.txt", scYear);
 			cout << "Your work has been all in Text File already !\n";}
-=======
-			if (t == 5) {
-				addOnly1stYearStudentsToClasses("_students.txt", "5_AddOnly1stYearStudents.txt", scYear);
-				cout << "Your work has been all in Text File already !\n";
-			}
-		
->>>>>>> 31baf0f1732657efcb5fe634bf17113e36f9eeff
 			if (t == 6) {
 				Semester sem;
 				createASemester_SchoolyearThatSemesterBelongsTo("_createNewSemester.txt", "6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", sem);
@@ -64,7 +56,7 @@ int main()
 				importScoreboard("scoreboard.csv", scoreboard);
 				cout << "Successfully. Now you can see the scoreboard that you just import!!"<< endl;
 			}
-			if (t == 23)
+			if (t == 24)
 			{
 				updateAStudentResult("scoreboard.csv", scoreboard);
 				cout << "Your work has been all in CSV File already !\n";
@@ -75,7 +67,7 @@ int main()
 				viewScoreboardOfClass("scoreboardClass.txt");
 			}
 			
-			if (t == 24)
+			if (t == 23)
 			{
 				cout << "Scoreboard of this course: " << endl;
 				viewScoreboardOfCourse(scoreboard);
