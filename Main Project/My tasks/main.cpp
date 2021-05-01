@@ -3,12 +3,12 @@ using namespace std;
 
 int main()
 {
-	bool loginOK;
 	SchoolYear scYear;
 	Scoreboard scoreboard;
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
+	bool loginOK;
 	login(role, loginOK);
 	if (loginOK == false) {
 		cout << "You login fail more than 5 times ! Please try again later !\n";
@@ -43,8 +43,6 @@ int main()
 				addOnly1stYearStudentsToClasses("_students.txt", "5_AddOnly1stYearStudents.txt", scYear);
 				cout << "Your work has been all in Text File already !\n";
 			}
-		
-
 			if (t == 6) {
 				Semester sem;
 				createASemester_SchoolyearThatSemesterBelongsTo("_createNewSemester.txt", "6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", sem);
@@ -93,6 +91,9 @@ int main()
 				cout << "Now you can view your scoreboard : " << endl;
 				viewScoreboard1Stu("scoreboard1.txt");
 			}
+
+
+
 
 		}
 	}
