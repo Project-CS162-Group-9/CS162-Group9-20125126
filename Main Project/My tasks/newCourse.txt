@@ -1,3 +1,6 @@
+3
+
+1
 CS162
 Introduction to Computer Science II-20CTT1
 Dr.Dinh Ba Tien
@@ -6,6 +9,7 @@ S1-Friday
 45
 4
 
+2
 PH251
 General Physics II- 20CTT1
 Dr.Nguyen Huu Nha
@@ -14,6 +18,7 @@ S3-Friday
 45
 4
 
+3
 MTH251
 Calculus II-20CTT1
 Prof.Nguyen Huu Anh
