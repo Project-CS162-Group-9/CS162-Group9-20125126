@@ -346,7 +346,7 @@ void createCourseSession(string pathOutput, newCourse& c)
 	cin >> c.day1;
 	cout << "Date close the course registion: " << endl;
 	cin >> c.day2;
-	ofstream fout;
+	ofstream fout; 
 	fout.open(pathOutput);
 	if (fout.is_open()) {
 		fout << "Date open the course registion: " << c.day1 << endl;
