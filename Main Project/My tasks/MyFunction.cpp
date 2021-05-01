@@ -1,6 +1,7 @@
 ﻿#include "MyFunction.h"
+
 #define foru(i, a, b) for(int i = a; i <= b; ++i)
-#include<iostream>
+
 using namespace std;
 
 void loadStaff(string path, SchoolYear& scYear)
@@ -78,22 +79,21 @@ void saveToFile(string path, SchoolYear& scYear)
 	else cout << "Can't open file!\n";
 	fout.close();
 }
-void t1_createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear& scYear)
+void createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear& scYear)
 {
 	//cout << "Pls input Name of School year, like 2020-2021: "; getline(cin, scYear.name);
 	loadStaff(path_staffs, scYear);
 	loadClass(path_classes, scYear);
 	loadSemester(path_semesters, scYear);
-
 	saveToFile(pathOutput, scYear);
 }
-void t2_createClasses1stYearStudent(string path_classes, string pathOutput, SchoolYear& scYear)
+void createClasses1stYearStudent(string path_classes, string pathOutput, SchoolYear& scYear)
 {
 	loadClass(path_classes, scYear);
 	ofstream fout;
 	fout.open(pathOutput);
 	if (fout.is_open()) {
-		fout << "The 1st yeat classes:\n";
+		fout << "The 1st year classes:\n";
 		for (int i = 0; i < scYear.nClass; ++i)
 			if (scYear.classes[i].year == 1) fout << scYear.classes[i].name << '\n';
 		fout << '\n';
@@ -101,7 +101,7 @@ void t2_createClasses1stYearStudent(string path_classes, string pathOutput, Scho
 	else cout << "Can't open file!\n";
 	fout.close();
 }
-void t3_addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& scYear)
+void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& scYear)
 {
 	ifstream fin;
 	fin.open(path_students);
@@ -146,7 +146,7 @@ void t3_addNew1stYearStudents(string path_students, string pathOutput, SchoolYea
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void t4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl)
+void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl)
 {
 	ifstream fin;
 	fin.open(path_CSV);
@@ -184,7 +184,7 @@ void t4_importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void t5_addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear)
+void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear)
 {
 	ifstream fin;
 	fin.open(path_students);
@@ -229,7 +229,7 @@ void t5_addOnly1stYearStudentsToClasses(string path_students, string pathOutput,
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem)
+void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem)
 {
 	ifstream fin;
 	fin.open(path_NewSemester);
@@ -256,7 +256,8 @@ void t6_createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester,
 	else cout << "Can't open file !\n";
 	fout.close();
 }
-void t7_createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
+
+void createCourseSession(string path_createSession, string pathOutput, newCourse& c) {
 	ifstream fin;
 	fin.open(path_createSession);
 	if (fin.is_open()) {
@@ -283,7 +284,7 @@ void t7_createCourseSession(string path_createSession, string pathOutput, newCou
 	else cout << "Can not open file \n";
 	fin.close();
 }
-void task8_addCourse(string path_addCourses, string pathOutput, int &nums) {
+void addCourse(string path_addCourses, string pathOutput, int &nums) {
 	ifstream fin;
 
 	fin >> nums;
@@ -299,11 +300,11 @@ void task8_addCourse(string path_addCourses, string pathOutput, int &nums) {
 			fin >> nTemp[i].maxStudent;
 			fin >> nTemp[i].credit;
 		}
-		
 	}
 	else
 		cout << "Can not open file \n";
 	fin.close();
+
 	ofstream fout;
 	fout.open(pathOutput);
 	if (fout.is_open()) {
@@ -319,14 +320,11 @@ void task8_addCourse(string path_addCourses, string pathOutput, int &nums) {
 			}
 		}
 	}
-	
 	else
 		cout << "Can't open file " << endl;
 	fout.close();
 }
-
-void task9_viewListOfCourses(newCourse* &nc, int nums) {
-	int STT;
+void viewListOfCourses(newCourse* &nc, int nums) {
 	for (int i = 0; i < nums; i++) {
 		cout << "STT" << i + 1;
 		cout << nc[i].ID << endl;
@@ -338,12 +336,8 @@ void task9_viewListOfCourses(newCourse* &nc, int nums) {
 		cout << nc[i].credit << endl;
 		cout << nc[i].maxStudent << endl;
 	}
-	cout << "Input STT to change information course";
-	cin >> STT;
-
 }
-
-void t10_updateCourseSession(newCourse* crs)
+void updateCourseSession(newCourse* crs)
 {
 	cout << "Input new lecturer name:";
 	cin >> crs->teacher;
@@ -363,11 +357,8 @@ void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID)
 			break;
 	for (i; crs != nullptr; i++)
 		crs[i] = crs[i + 1];
-
-
-
-
-void enrollCourse(Student &s, int courseID)
+}
+void enrollCourse(Student &s, int courseID)                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 {
     if (s.courseCount < 5)
     {
@@ -375,22 +366,308 @@ void enrollCourse(Student &s, int courseID)
         s.course[++s.courseCount] = courseID;
     }
 }
-
-void viewEnrollCourse(Student &s)
+void viewEnrollCourse(Student &s, newCourse* &nc)
 {
+	newCourse* newCourses = new newCourse[s.courseCount];
     foru(i, 0, s.courseCount)
     {
-        cout << s.course[i];
+        int courseId = s.course[i];
+		cout << "STT" << i + 1;
+		cout << newCourses[courseId].ID << endl;
+		cout << newCourses[courseId].nameCourses << endl;
+		cout << newCourses[courseId].teacher << endl;
+		cout << newCourses[courseId].semester << endl;
+		cout << newCourses[courseId].session1 << endl;
+		cout << newCourses[courseId].session2 << endl;
+		cout << newCourses[courseId].credit << endl;
+		cout << newCourses[courseId].maxStudent << endl;
     }
+    cout << endl;
 }
-
 void removeEnrollCourse(Student &s, int courseID)
 {
     foru(i, 0, s.courseCount)
     if (courseID == s.course[i])
     {
-        foru (j, i, s.courseCount - 1) s[j] = s[j + 1];
+//        foru (j, i, s.courseCount - 1) s[j] = s[j + 1];
         s.courseCount--;
         break;
     }
+}
+
+void viewStudentCourse(Student &s, newCourse* &nc)
+{
+	newCourse* newCourses = new newCourse[s.courseCount];
+    foru(i, 0, s.courseCount)
+    {
+        int courseId = s.course[i];
+		cout << "STT" << i + 1;
+		cout << newCourses[courseId].ID << endl;
+		cout << newCourses[courseId].nameCourses << endl;
+		cout << newCourses[courseId].teacher << endl;
+		cout << newCourses[courseId].semester << endl;
+		cout << newCourses[courseId].session1 << endl;
+		cout << newCourses[courseId].session2 << endl;
+		cout << newCourses[courseId].credit << endl;
+		cout << newCourses[courseId].maxStudent << endl;
+    }
+}
+
+void viewListOfClass(SchoolYear &s)
+{
+    foru (i, 0, s.nClass)
+    {
+        cout << left << setw(8) /*<< setfill(" ")*/ << s.classes[i].name;
+        cout << left << setw(8) /*<< setfill(" ")*/ << s.classes[i].year;
+        cout << left << setw(8) /*<< setfill(" ")*/ << "number student:";
+        cout << left << setw(8) /*<< setfill(" ")*/ << s.classes[i].nStudent;
+    }
+    cout << endl;
+}
+
+void viewListOfStudentInAClass(Class &c)
+{
+    /*cout << left << setw(8) << setfill(" ") << c.name << ": ";
+    foru (j, 0, c.nStudent) cout << left << setw(8) << setfill(" ") << c.nStudent[j];
+    cout << endl;*/
+
+	ifstream fin; fin.open("_CSV file.csv");
+
+	fin >> c.nStudent; fin.ignore();
+	c.students = new Student[c.nStudent];
+
+	getline(fin, c.name);
+	for (int i = 0; i < c.nStudent; ++i) {
+		getline(fin, c.students[i].No, ',');
+		getline(fin, c.students[i].studentID, ',');
+		getline(fin, c.students[i].firstName, ',');
+		getline(fin, c.students[i].lastName, ',');
+		getline(fin, c.students[i].gender, ',');
+		getline(fin, c.students[i].DOB, ',');
+		getline(fin, c.students[i].socialID, '\n');
+	}
+	fin.close();
+
+	cout << "Class " << c.name << '\n';
+	for (int j = 0; j < c.nStudent; ++j) {
+		cout << "No: " << c.students[j].No << '\n';
+		cout << "Student ID: " << c.students[j].studentID << '\n';
+		cout << "First name: " << c.students[j].firstName << '\n';
+		cout << "Last name: " << c.students[j].lastName << '\n';
+		cout << "Gender: " << c.students[j].gender << '\n';
+		cout << "Date of Birth: " << c.students[j].DOB << '\n';
+		cout << "Social ID: " << c.students[j].socialID << '\n' << '\n';
+	}
+}
+
+void exportListOfStudentToCSV(string pathIn, string pathOut)
+{
+	int nums;
+	ifstream fin;
+	fin.open(pathIn);
+	if (fin.is_open()) {
+		fin >> nums;
+		Student* student = new Student[nums];
+		fin.ignore();
+		for (int i = 0; i < nums; i++)
+		{
+			getline(fin, student[i].No);
+			getline(fin, student[i].studentID);
+			getline(fin, student[i].firstName);
+			getline(fin, student[i].lastName);
+		}
+		fin.close();
+
+		ofstream fout;
+		fout.open(pathOut);
+		if (fout.is_open())
+		{
+	
+			for (int i = 0; i < nums; i++)
+			{
+				
+				fout << student[i].No << "," << student[i].studentID << "," << student[i].firstName <<" "<< student[i].lastName << endl;
+			}
+		}
+		else cout << "Can't open file !\n";
+		fout.close();
+	}
+
+}
+void importScoreboard(string pathIn, Scoreboard& scoreboard)
+{
+	ifstream fin;
+	fin.open(pathIn);
+	if (fin.is_open()) {
+		//fin.ignore();
+		scoreboard.student = new Student[10];
+		scoreboard.score = new Score[10];
+		for (int i = 0; i < 10; i++)
+		{
+			getline(fin, scoreboard.student[i].No, ',');
+			getline(fin, scoreboard.student[i].studentID, ',');
+			getline(fin, scoreboard.student[i].firstName, ' ');
+			getline(fin, scoreboard.student[i].lastName, ',');
+			string Total, Final, Midterm, Other;
+			getline(fin, Total, ',');
+			getline(fin, Final, ',');
+			getline(fin, Midterm, ',');
+			getline(fin, Other, '\n');
+			scoreboard.score[i].total = stoi(Total);
+			scoreboard.score[i].final = stoi(Final);
+			scoreboard.score[i].midterm = stoi(Midterm);
+			scoreboard.score[i].other = stoi(Other);
+		}
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+}
+void viewScoreboardOfCourse(Scoreboard& scoreboard)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		cout << scoreboard.student[i].No << ",";
+		cout << scoreboard.student[i].studentID<< ",";
+		cout << scoreboard.student[i].firstName<<"";
+		cout << scoreboard.student[i].lastName << ",";
+		cout << scoreboard.score[i].total << ",";
+		cout << scoreboard.score[i].final << ",";
+		cout << scoreboard.score[i].midterm << ",";
+		cout << scoreboard.score[i].other << "\n";
+	}
+}
+void updateAStudentResult(string path, Scoreboard& scoreboard)
+{
+	ifstream fin;
+	fin.open(path);
+	if (fin.is_open()) {
+		//fin.ignore();
+		scoreboard.student = new Student[10];
+		scoreboard.score = new Score[10];
+		for (int i = 0; i < 10; i++)
+		{
+			getline(fin, scoreboard.student[i].No, ',');
+			getline(fin, scoreboard.student[i].studentID, ',');
+			getline(fin, scoreboard.student[i].firstName, ' ');
+			getline(fin, scoreboard.student[i].lastName, ',');
+			string Total, Final, Midterm, Other;
+			getline(fin, Total, ',');
+			getline(fin, Final, ',');
+			getline(fin, Midterm, ',');
+			getline(fin, Other, '\n');
+			scoreboard.score[i].total = stoi(Total);
+			scoreboard.score[i].final = stoi(Final);
+			scoreboard.score[i].midterm = stoi(Midterm);
+			scoreboard.score[i].other = stoi(Other);
+		}
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+}
+void viewScoreboardOfClass(string path)
+{
+	Class clas;
+	clas.students = new Student[8];
+	ifstream fin;
+	fin.open(path);
+	if (fin.is_open())
+	{
+		getline(fin, clas.name);
+		string nums;
+		getline(fin, nums);
+		clas.nStudent = stoi(nums);
+		for (int i = 0; i < clas.nStudent; i++)
+		{
+			
+			getline(fin, clas.students[i].No);
+			getline(fin, clas.students[i].studentID);
+			getline(fin, clas.students[i].firstName);
+			getline(fin, clas.students[i].lastName);
+			string temp3;
+			getline(fin, temp3);
+			clas.students[i].courseCount = stoi(temp3);
+			clas.students[i].finall = new double[clas.students[i].courseCount];
+			for (int j = 0; j < clas.students[i].courseCount; j++)
+			{
+				string temp;
+				getline(fin, temp);
+				clas.students[i].finall[j] = stoi(temp);
+			}
+			string temp1, temp2;
+			getline(fin, temp1);
+			getline(fin, temp2);
+			clas.students[i].semesterGPA = stoi(temp1);
+			clas.students[i].overallGPA = stoi(temp2);
+		}
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+	cout << "Class name: " << clas.name << endl;
+	cout << "Number of student: " << clas.nStudent << endl;
+	for (int i = 0; i < clas.nStudent; i++)
+	{
+		cout << "No: " << clas.students[i].No << endl;
+		cout << "ID: " << clas.students[i].studentID << endl;;
+		cout << "Name: " << clas.students[i].firstName << " ";
+		cout << clas.students[i].lastName << endl;;
+		cout << " Number of courses: " << clas.students[i].courseCount << endl;
+		for (int j = 0; j < clas.students[i].courseCount; j++)
+		{
+			cout << " Final mark of course " << j << ":" << clas.students[i].finall[j] << endl;
+		}
+		cout << "Semseter GPA: " << clas.students[i].semesterGPA << endl;
+		cout << "Overall GPA: " << clas.students[i].overallGPA << endl;
+		cout << endl;
+	}
+}
+void viewScoreboard1Stu(string path)
+{
+	Student student;
+	string classname;
+	ifstream fin;
+	fin.open(path);
+	if (fin.is_open())
+	{
+			getline(fin, classname);
+			getline(fin, student.No);
+			getline(fin, student.studentID);
+			getline(fin, student.firstName);
+			getline(fin, student.lastName);
+			string temp3;
+			getline(fin, temp3);
+			student.courseCount = stoi(temp3);
+			student.finall = new double[student.courseCount];
+			for (int j = 0; j < student.courseCount; j++)
+			{
+				string temp;
+				getline(fin, temp);
+				student.finall[j] = stoi(temp);
+			}
+			string temp1, temp2;
+			getline(fin, temp1);
+			getline(fin, temp2);
+			student.semesterGPA = stoi(temp1);
+			student.overallGPA = stoi(temp2);
+		
+	}
+	else
+		cout << "Can not open file \n";
+	fin.close();
+		cout << "Class name: " << classname << endl;
+		cout << "No: " << student.No << endl;
+		cout << "ID: " << student.studentID << endl;;
+		cout << "Name: " << student.firstName << " ";
+		cout << student.lastName << endl;;
+		cout << " Number of courses: " << student.courseCount << endl;
+		for (int j = 0; j < student.courseCount; j++)
+		{
+			cout << " Final mark of course " << j << ":" << student.finall[j] << endl;
+		}
+		cout << "Semseter GPA: " << student.semesterGPA << endl;
+		cout << "Overall GPA: " << student.overallGPA << endl;
+		cout << endl;
+	
 }
