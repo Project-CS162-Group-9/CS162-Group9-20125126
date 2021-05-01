@@ -64,7 +64,7 @@ void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& 
 void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl);
 void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear);
 void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem);
-void createCourseSession(string path_createSession, string pathOutput, newCourse& c);
+void createCourseSession(string pathOutput, newCourse& c;
 void addCourse(string path_addCourses, string pathOutput);
 void viewListOfCourses(newCourse* nc, int nums);
 void updateCourseSession(newCourse* crs);
