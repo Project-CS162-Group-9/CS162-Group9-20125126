@@ -21,22 +21,32 @@ int main()
 			cout << "Input which work in Project (1, 2, 3,...) Staff want to do, input '0' to stop working: "; int t; cin >> t;
 			if (t == 0) { cout << "Thank you for using out Project !\n"; return 0; }
 
-			if (t == 1)
+			if (t == 1) {
 				createASchoolYear("_staffs.txt", "_classes.txt", "_semesters.txt", "1_outputSchoolYear.txt", scYear);
-			if (t == 2)
+				cout << "Your work has been all in Text File already !\n";
+			}
+			if (t == 2) {
 				createClasses1stYearStudent("_classes.txt", "2_classes1stYearStudent.txt", scYear);
-			if (t == 3)
+				cout << "Your work has been all in Text File already !\n";
+			}
+			if (t == 3) {
 				addNew1stYearStudents("_students.txt", "3_studentsIn1stYearClasses.txt", scYear);
+				cout << "Your work has been all in Text File already !\n";
+			}
 			if (t == 4) {
 				Class cl;
 				importCSVFileStudent1Class("_CSV file.csv", "4_studentsIn1ClassFromCSVfile.txt", cl);
+				cout << "Your work has been all in Text File already !\n";
 			}
-			if (t == 5)
+			if (t == 5) {
 				addOnly1stYearStudentsToClasses("_students.txt", "5_AddOnly1stYearStudents.txt", scYear);
-			cout << "Your work has been all in Text File already !\n";
+				cout << "Your work has been all in Text File already !\n";
+			}
+		
 			if (t == 6) {
 				Semester sem;
 				createASemester_SchoolyearThatSemesterBelongsTo("_createNewSemester.txt", "6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", sem);
+				cout << "Your work has been all in Text File already !\n";
 			}
 			if (t == 21)
 			{
