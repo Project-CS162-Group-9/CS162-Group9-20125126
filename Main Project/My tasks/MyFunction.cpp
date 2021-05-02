@@ -396,7 +396,7 @@ void addCourse(string path_addCourses, string pathOutput, int &nums)
 			}
 		}
 	}
-	else cout << "Can't open file " << endl;
+	else cout << "Can't open file\n";
 	fout.close();
 }
 void viewListOfCourses(newCourse *&nc, int nums)
