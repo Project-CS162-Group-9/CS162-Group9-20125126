@@ -770,5 +770,5 @@ void viewScoreboard1Stu(string path)
 	}
 	cout << "Semseter GPA: " << student.semesterGPA << endl;
 	cout << "Overall GPA: " << student.overallGPA << endl;
-	cout << endl;
+	cout << '\n';
 }
