@@ -597,14 +597,17 @@ void exportListOfStudentToCSV(string pathIn, string pathOut)
 }
 void importScoreboard(string pathIn, Scoreboard &scoreboard)
 {
+	int n;
+	cout << "How many students in course: "<<endl;
+	cin >> n;
 	ifstream fin;
 	fin.open(pathIn);
 	if (fin.is_open())
 	{
 		//fin.ignore();
-		scoreboard.student = new Student[10];
-		scoreboard.score = new Score[10];
-		for (int i = 0; i < 10; i++)
+		scoreboard.student = new Student[n];
+		scoreboard.score = new Score[n];
+		for (int i = 0; i < n; i++)
 		{
 			getline(fin, scoreboard.student[i].No, ',');
 			getline(fin, scoreboard.student[i].studentID, ',');
@@ -627,7 +630,10 @@ void importScoreboard(string pathIn, Scoreboard &scoreboard)
 }
 void viewScoreboardOfCourse(Scoreboard &scoreboard)
 {
-	for (int i = 0; i < 10; i++)
+	int n;
+	cout << "How many students in course: "<<endl;
+	cin >> n;
+	for (int i = 0; i < n; i++)
 	{
 		cout << scoreboard.student[i].No << ",";
 		cout << scoreboard.student[i].studentID << ",";
@@ -641,14 +647,17 @@ void viewScoreboardOfCourse(Scoreboard &scoreboard)
 }
 void updateAStudentResult(string path, Scoreboard &scoreboard)
 {
+	int n;
+	cout << "How many students in course: "<<endl;
+	cin >> n;
 	ifstream fin;
 	fin.open(path);
 	if (fin.is_open())
 	{
 		//fin.ignore();
-		scoreboard.student = new Student[10];
-		scoreboard.score = new Score[10];
-		for (int i = 0; i < 10; i++)
+		scoreboard.student = new Student[n];
+		scoreboard.score = new Score[n];
+		for (int i = 0; i < n; i++)
 		{
 			getline(fin, scoreboard.student[i].No, ',');
 			getline(fin, scoreboard.student[i].studentID, ',');
@@ -671,8 +680,11 @@ void updateAStudentResult(string path, Scoreboard &scoreboard)
 }
 void viewScoreboardOfClass(string path)
 {
+	int n;
+	cout << "How many students in class: "<<endl;
+	cin >> n;
 	Class clas;
-	clas.students = new Student[8];
+	clas.students = new Student[n];
 	ifstream fin;
 	fin.open(path);
 	if (fin.is_open())
