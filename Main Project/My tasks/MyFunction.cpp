@@ -578,8 +578,7 @@ void exportListOfStudentToCSV(string pathIn, string pathOut)
 				fout << student[i].No << "," << student[i].studentID << "," << student[i].firstName << " " << student[i].lastName << endl;
 			}
 		}
-		else
-			cout << "Can't open file !\n";
+		else cout << "Can't open file !\n";
 		fout.close();
 	}
 }
