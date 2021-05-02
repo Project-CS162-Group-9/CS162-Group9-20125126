@@ -702,8 +702,7 @@ void viewScoreboardOfClass(string path)
 			clas.students[i].overallGPA = stoi(temp2);
 		}
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fin.close();
 	cout << "Class name: " << clas.name << endl;
 	cout << "Number of student: " << clas.nStudent << endl;
@@ -754,9 +753,9 @@ void viewScoreboard1Stu(string path)
 		student.semesterGPA = stoi(temp1);
 		student.overallGPA = stoi(temp2);
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fin.close();
+	
 	cout << "Class name: " << classname << endl;
 	cout << "No: " << student.No << endl;
 	cout << "ID: " << student.studentID << endl;
