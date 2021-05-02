@@ -124,11 +124,7 @@ void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear &
 {
 	ifstream fin;
 	fin.open(path_students);
-	if (!fin.is_open())
-	{
-		cout << "Can't open file !\n";
-		return;
-	}
+	if (!fin.is_open()) { cout << "Can't open file !\n"; return; }
 
 	int nTemp;
 	fin >> nTemp;
@@ -193,11 +189,7 @@ void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class &cl)
 {
 	ifstream fin;
 	fin.open(path_CSV);
-	if (!fin.is_open())
-	{
-		cout << "Can't open file !\n";
-		return;
-	}
+	if (!fin.is_open()) { cout << "Can't open file !\n"; return; }
 
 	fin >> cl.nStudent;
 	fin.ignore();
@@ -241,11 +233,7 @@ void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, Sc
 {
 	ifstream fin;
 	fin.open(path_students);
-	if (!fin.is_open())
-	{
-		cout << "Can't open file !\n";
-		return;
-	}
+	if (!fin.is_open()) { cout << "Can't open file !\n"; return; }
 
 	int nTemp;
 	fin >> nTemp;
@@ -567,8 +555,8 @@ void viewListOfStudentInAClass(Class &c)
 		cout << "Last name: " << c.students[j].lastName << '\n';
 		cout << "Gender: " << c.students[j].gender << '\n';
 		cout << "Date of Birth: " << c.students[j].DOB << '\n';
-		cout << "Social ID: " << c.students[j].socialID << '\n'
-			 << '\n';
+		cout << "Social ID: " << c.students[j].socialID << '\n';
+		cout << '\n';
 	}
 }
 

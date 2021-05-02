@@ -19,7 +19,7 @@ int main()
 	{
 		while (true) {
 			cout << "Input which work in Project (1, 2, 3,...) Staff want to do, input '0' to stop working: "; int t; cin >> t;
-			if (t == 0) { cout << "Thank you for using out Project !\n"; return 0; }
+			if (t == 0) { cout << "Thank you for using our Project !\n"; return 0; }
 
 			if (t == 1) {
 				createASchoolYear("_staffs.txt", "_classes.txt", "_semesters.txt", "1_outputSchoolYear.txt", scYear);
@@ -82,7 +82,7 @@ int main()
 	{
 		while (true) {
 			cout << "Input which work in Project (1, 2, 3,...) a Student want to do, input '0' to stop working: "; int t; cin >> t;
-			if (t == 0) { cout << "Thank you for using out Project !\n"; return 0; }
+			if (t == 0) { cout << "Thank you for using our Project !\n"; return 0; }
 
 			if (t == 19) {
 				cout << "You can View list of students in a class (for example: 20APCS1,...):\n";
