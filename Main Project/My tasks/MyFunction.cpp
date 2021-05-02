@@ -466,7 +466,7 @@ void viewEnrollCourse(Student &s, newCourse *&nc)
 		cout << newCourses[courseId].credit << endl;
 		cout << newCourses[courseId].maxStudent << endl;
 	}
-	cout << endl;
+	cout << '\n';
 }
 void removeEnrollCourse(Student &s, int courseID)
 {
