@@ -529,6 +529,7 @@ void viewListOfClass(SchoolYear &s)
 		cout << left << setw(8) /*<< setfill(" ")*/ << "number student:";
 		cout << left << setw(8) /*<< setfill(" ")*/ << s.classes[i].nStudent;
 	}
+	int ii = 3;
 	cout << endl;
 }
 
