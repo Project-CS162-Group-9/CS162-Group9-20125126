@@ -611,8 +611,7 @@ void importScoreboard(string pathIn, Scoreboard &scoreboard)
 			scoreboard.score[i].other = stoi(Other);
 		}
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fin.close();
 }
 void viewScoreboardOfCourse(Scoreboard &scoreboard)
