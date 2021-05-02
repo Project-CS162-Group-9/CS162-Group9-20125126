@@ -59,8 +59,7 @@ void loadSemester(string path, SchoolYear &scYear)
 			fin.ignore();
 		}
 	}
-	else
-		cout << "Can't open file!\n";
+	else cout << "Can't open file!\n";
 	fin.close();
 }
 void saveToFile(string path, SchoolYear &scYear)
@@ -89,8 +88,7 @@ void saveToFile(string path, SchoolYear &scYear)
 			fout << "End Date: " << scYear.semesters[i].end.day << '/' << scYear.semesters[i].end.month << '/' << scYear.semesters[i].end.year << '\n';
 		}
 	}
-	else
-		cout << "Can't open file!\n";
+	else cout << "Can't open file!\n";
 	fout.close();
 }
 void createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear &scYear)
@@ -114,8 +112,7 @@ void createClasses1stYearStudent(string path_classes, string pathOutput, SchoolY
 				fout << scYear.classes[i].name << '\n';
 		fout << '\n';
 	}
-	else
-		cout << "Can't open file!\n";
+	else cout << "Can't open file!\n";
 	fout.close();
 }
 void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear &scYear)
@@ -179,8 +176,7 @@ void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear &
 				fout << '\n';
 			}
 	}
-	else
-		cout << "Can't open file !\n";
+	else cout << "Can't open file !\n";
 	fout.close();
 }
 void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class &cl)
@@ -223,8 +219,7 @@ void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class &cl)
 				 << '\n';
 		}
 	}
-	else
-		cout << "Can't open file !\n";
+	else cout << "Can't open file !\n";
 	fout.close();
 }
 void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear &scYear)
@@ -288,8 +283,7 @@ void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, Sc
 				fout << '\n';
 			}
 	}
-	else
-		cout << "Can't open file !\n";
+	else cout << "Can't open file !\n";
 	fout.close();
 }
 void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester &sem)
@@ -321,8 +315,7 @@ void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, st
 		else
 			fout << sem.end.year - 1 << " - " << sem.end.year;
 	}
-	else
-		cout << "Can't open file !\n";
+	else cout << "Can't open file !\n";
 	fout.close();
 }
 
@@ -339,8 +332,7 @@ void createCourseSession(string pathOutput, newCourse &c)
 		fout << "Date open the course registion: " << c.day1 << endl;
 		fout << "Date close the course registion: " << c.day2 << endl;
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fout.close();
 }
 void addCourse(string path_addCourses, string pathOutput, int &nums)
@@ -363,8 +355,7 @@ void addCourse(string path_addCourses, string pathOutput, int &nums)
 			fin >> nTemp[i].credit;
 		}
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fin.close();
 
 	ofstream fout;
@@ -405,8 +396,7 @@ void addCourse(string path_addCourses, string pathOutput, int &nums)
 			}
 		}
 	}
-	else
-		cout << "Can't open file " << endl;
+	else cout << "Can't open file " << endl;
 	fout.close();
 }
 void viewListOfCourses(newCourse *&nc, int nums)
