@@ -21,8 +21,7 @@ void loadStaff(string path, SchoolYear &scYear)
 			getline(fin, scYear.staffs[i].password);
 		}
 	}
-	else
-		cout << "Can't open file!\n";
+	else cout << "Can't open file!\n";
 	//delete[] scYear.staffs;
 	fin.close();
 }
@@ -42,8 +41,7 @@ void loadClass(string path, SchoolYear &scYear)
 			getline(fin, scYear.classes[i].name);
 		}
 	}
-	else
-		cout << "Can't open file!\n";
+	else cout << "Can't open file!\n";
 	fin.close();
 }
 void loadSemester(string path, SchoolYear &scYear)
