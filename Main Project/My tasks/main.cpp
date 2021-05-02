@@ -3,12 +3,12 @@ using namespace std;
 
 int main()
 {
-	bool loginOK;
 	SchoolYear scYear;
 	Scoreboard scoreboard;
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
+	bool loginOK;
 	login(role, loginOK);
 	if (loginOK == false) {
 		cout << "You login fail more than 5 times ! Please try again later !\n";
@@ -70,7 +70,6 @@ int main()
 				cout << "Now you can view scoreboard of this class: " << endl;
 				viewScoreboardOfClass("scoreboardClass.txt");
 			}
-			
 			if (t == 23)
 			{
 				cout << "Scoreboard of this course: " << endl;
@@ -97,8 +96,10 @@ int main()
 				viewScoreboard1Stu("scoreboard1.txt");
 			}
 
+			
+			
 		}
 	}
-
+	
 	return 0;
 }
