@@ -660,8 +660,7 @@ void updateAStudentResult(string path, Scoreboard &scoreboard)
 			scoreboard.score[i].other = stoi(Other);
 		}
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fin.close();
 }
 void viewScoreboardOfClass(string path)
