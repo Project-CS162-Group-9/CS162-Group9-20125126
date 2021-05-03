@@ -160,11 +160,11 @@ int main()
 
 			if (t == 26)
 			{
-				cout << " Enter your full name to view your scoreboard: "<<endl;
-				string name;
-				cin>> name;
+				cout << " Enter your ID to view your scoreboard: "<<endl;
+				int ID;
+				cin >> ID;
 				cout << "Now you can view your scoreboard : " << endl;
-				viewScoreboard1Stu("scoreboard1.txt");
+				viewScoreboard1Stu("scoreboard1.txt",ID);
 			}
 
 		}

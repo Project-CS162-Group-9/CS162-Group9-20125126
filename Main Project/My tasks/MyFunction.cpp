@@ -1016,51 +1016,66 @@ void viewScoreboardOfClass(string path)
 		cout << endl;
 	}
 }
-void viewScoreboard1Stu(string path)
+void viewScoreboard1Stu(string path,int ID)
 {
-	Student student;
-	string classname;
 	ifstream fin;
 	fin.open(path);
-	if (fin.is_open())
+	int nums;
+	string num;
+	getline(fin, num);
+	nums = stoi(num);
+	Student* student = new Student[nums];
+	string classname[100];
+	int ID1[100];
+	for (int i = 0;i<nums;i++)
 	{
-		getline(fin, classname);
-		getline(fin, student.No);
-		getline(fin, student.studentID);
-		getline(fin, student.firstName);
-		getline(fin, student.lastName);
+		getline(fin, classname[i]);
+		getline(fin, student[i].No);
+		getline(fin, student[i].studentID);
+		ID1[i] = stoi(student[i].studentID);
+		getline(fin, student[i].firstName);
+		getline(fin, student[i].lastName);
 		string temp3;
 		getline(fin, temp3);
-		student.courseCount = stoi(temp3);
-		student.finall = new double[student.courseCount];
-		for (int j = 0; j < student.courseCount; j++)
+		student[i].courseCount = stoi(temp3);
+		student[i].finall = new double[student[i].courseCount];
+		for (int j = 0; j < student[i].courseCount; j++)
 		{
 			string temp;
 			getline(fin, temp);
-			student.finall[j] = stoi(temp);
+			student[i].finall[j] = stoi(temp);
 		}
 		string temp1, temp2;
 		getline(fin, temp1);
 		getline(fin, temp2);
-		student.semesterGPA = stoi(temp1);
-		student.overallGPA = stoi(temp2);
+		student[i].semesterGPA = stoi(temp1);
+		student[i].overallGPA = stoi(temp2);
 	}
-	else
-		cout << "Can not open file \n";
-	fin.close();
-	cout << "Class name: " << classname << endl;
-	cout << "No: " << student.No << endl;
-	cout << "ID: " << student.studentID << endl;
-	;
-	cout << "Name: " << student.firstName << " ";
-	cout << student.lastName << endl;
-	;
-	cout << " Number of courses: " << student.courseCount << endl;
-	for (int j = 0; j < student.courseCount; j++)
+	bool check = false;
+	for (int i = 0; i < nums; i++)
 	{
-		cout << " Final mark of course " << j << ":" << student.finall[j] << endl;
+		if (ID1[i] == ID)
+		{
+			check = true;
+			cout << "Class name: " << classname[i] << endl;
+			cout << "No: " << student[i].No << endl;
+			cout << "ID: " << student[i].studentID << endl;
+			cout << "Name: " << student[i].firstName << " ";
+			cout << student[i].lastName << endl;
+			cout << " Number of courses: " << student[i].courseCount << endl;
+			for (int j = 0; j < student[i].courseCount; j++)
+			{
+				cout << " Final mark of course " << (j+1) << ":" << student[i].finall[j] << endl;
+			}
+			cout << "Semseter GPA: " << student[i].semesterGPA << endl;
+			cout << "Overall GPA: " << student[i].overallGPA << endl;
+			cout << endl;
+		}
 	}
-	cout << "Semseter GPA: " << student.semesterGPA << endl;
-	cout << "Overall GPA: " << student.overallGPA << endl;
-	cout << endl;
+	if (!check)
+	{
+		cout << "Your scoreboard hasn't imported!!" << endl;
+	}
+	fin.close();
+	
 }

@@ -85,6 +85,6 @@ void exportListOfStudentToCSV(string pathIn,string pathOut);
 void viewScoreboardOfCourse(Scoreboard& scoreboard);
 void updateAStudentResult(string path, Scoreboard& scoreboard);
 void viewScoreboardOfClass(string path);
-void viewScoreboard1Stu(string path);
+void viewScoreboard1Stu(string path,int ID);
 
 #endif
