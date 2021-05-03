@@ -22,7 +22,7 @@ void readData(string pathIn, User& usr)
 		getline(fin, usr.user_students[i].password);
 	}
 }
-void login(int role, bool& loginOK)
+void login(int role, bool& loginOK, string &userName)
 {
 	User usr;
 	readData("_User.txt", usr);
@@ -35,13 +35,14 @@ void login(int role, bool& loginOK)
 			cout << "Pls input your Username: "; getline(cin, username);
 			for (int i = 0; i < usr.nUser_staff; ++i)
 			{
-				if (username == usr.user_staffs[i].username) 
+				if (username == usr.user_staffs[i].username)
 				{
 					timeStop = 5;
 					do {
 						cout << "Pls input your Password: "; getline(cin, password);
 						if (password == usr.user_staffs[i].password)
 						{
+						    userName = usr.user_staffs[i].username;
 							loginOK = true;
 							return;
 						}
@@ -70,6 +71,7 @@ void login(int role, bool& loginOK)
 						cout << "Pls input your Password: "; getline(cin, password);
 						if (password == usr.user_students[i].password)
 						{
+						    userName = usr.user_students[i].username;
 							loginOK = true;
 							return;
 						}

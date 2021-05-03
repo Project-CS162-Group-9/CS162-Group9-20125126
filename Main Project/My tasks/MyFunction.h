@@ -16,7 +16,7 @@ struct Staff {
 struct Student {
 	int year;
 	string No, studentID, firstName, lastName, gender, DOB, socialID;
-	int course[6];
+	string course[5];
 	int courseCount;
 	double semesterGPA, overallGPA;
 	double* finall;
@@ -53,6 +53,7 @@ struct Scoreboard {
 	Student* student;
 };
 
+
 void loadStaff(string path, SchoolYear& scYear);
 void loadClass(string path, SchoolYear& scYear);
 void loadSemester(string path, SchoolYear& scYear);
@@ -63,17 +64,22 @@ void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear& 
 void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class& cl);
 void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear& scYear);
 void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester& sem);
+
 void createCourseSession(string pathOutput, newCourse& c);
-void addCourse(string path_addCourses, string pathOutput);
-void viewListOfCourses(newCourse* nc, int nums);
-void updateCourseSession(newCourse* crs);
-void deleteCourse(SchoolYear* schYear, newCourse* crs, string crsID);
-void enrollCourse(Student &s, int courseID);
-void viewEnrollCourse(Student &s, newCourse* &nc, int nums);
-void removeEnrollCourse(Student &s, int courseID);
+void addCourse(string path_addCourses);
+void viewListOfCourses(string pathInput);
+void updateCourseInformation(string pathInput, string pathOutput);
+void deleteCourse(string pathInput, string pathOutput);
+
+
+void enrollCourse(Student &s, string pathInput,string pathOutput);
+void viewEnrollCourse(string pathInputCourse, string pathInputStudent);
+void removeEnrollCourse(string pathInput,string pathOutput);
+
 void viewStudentCourse(Student &s, newCourse* &nc);
-void viewListOfClass(SchoolYear &s);
+void viewListOfClass(string pathInput);
 void viewListOfStudentInAClass(Class &c);
+
 void importScoreboard(string pathIn, Scoreboard& scoreboard);
 void exportListOfStudentToCSV(string pathIn,string pathOut);
 void viewScoreboardOfCourse(Scoreboard& scoreboard);
