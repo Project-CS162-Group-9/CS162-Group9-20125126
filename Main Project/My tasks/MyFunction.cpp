@@ -347,8 +347,6 @@ void createCourseSession(string pathOutput, newCourse &c)
 }
 /*void addCourse(string path_addCourses, string pathOutput, int &nums)
 {
-
-
 	fin >> nums;
 	newCourse *nTemp = new newCourse[nums];
 	fin.open(path_addCourses);
