@@ -114,33 +114,33 @@ int main()
 			if (t == 0) { cout << "Thank you for using our Project !\n"; return 0; }
 
 			if (t == 13)
-            {
-                string tmp = userName + "13_enrollCourse.txt";
-                enrollCourse(student, tmp, tmp);
-            }
+            		{
+                		string tmp = userName + "13_enrollCourse.txt";
+                	enrollCourse(student, tmp, tmp);
+            		}
 
 			if (t == 14)
-            {
-                string tmp = userName + "13_enrollCourse.txt";
-                viewEnrollCourse("8_courses.txt", tmp);
-            }
+	            	{
+                		string tmp = userName + "13_enrollCourse.txt";
+                		viewEnrollCourse("8_courses.txt", tmp);
+            		}
 
-            if (t == 15)
-            {
-                string tmp = userName + "13_enrollCourse.txt";
-                removeEnrollCourse(tmp, tmp);
-            }
+            		if (t == 15)
+			{
+				string tmp = userName + "13_enrollCourse.txt";
+				removeEnrollCourse(tmp, tmp);
+			}
 
-            if (t == 16)
-            {
-                string tmp = userName + "13_enrollCourse.txt";
-                viewEnrollCourse("8_courses.txt", tmp);
-            }
+			if (t == 16)
+			{
+				string tmp = userName + "13_enrollCourse.txt";
+				viewEnrollCourse("8_courses.txt", tmp);
+			}
 
-            if (t == 17)
-            {
-                viewListOfClass("_classes.txt");
-            }
+			if (t == 17)
+			{
+				viewListOfClass("_classes.txt");
+			}
 
 
 			if (t == 18) {
@@ -149,9 +149,9 @@ int main()
 			}
 
 			if (t == 19)
-            {
-                viewListOfCourses("8_courses.txt");
-            }
+            		{
+                		viewListOfCourses("8_courses.txt");
+            		}
 
 			if (t == 20) {
 				cout << "You can View list of students in a class (for example: 20APCS1,...):\n";
