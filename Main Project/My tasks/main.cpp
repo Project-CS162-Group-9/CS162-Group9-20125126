@@ -7,9 +7,9 @@ int main()
 	SchoolYear scYear;
 	Scoreboard scoreboard;
 	newCourse course;
-    Semester sem;
-    Student student;
-    string userName;
+    	Semester sem;
+    	Student student;
+    	string userName;
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
