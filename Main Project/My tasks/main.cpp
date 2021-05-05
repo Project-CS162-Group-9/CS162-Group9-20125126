@@ -55,29 +55,29 @@ int main()
 			}
 
 			if (t == 7)
-            {
-                createCourseSession("7_courseSession.txt", course);
-            }
+            		{
+                		createCourseSession("7_courseSession.txt", course);
+            		}
 
-            if (t == 8)
-            {
-                addCourse("8_courses.txt");
-            }
+            		if (t == 8)
+            		{
+                		addCourse("8_courses.txt");
+            		}
 
-            if (t == 9)
-            {
-                viewListOfCourses("8_courses.txt");
-            }
+            		if (t == 9)
+            		{
+                		viewListOfCourses("8_courses.txt");
+            		}
 
-            if (t == 10)
-            {
-                updateCourseInformation("8_courses.txt", "8_courses.txt");
-            }
+            		if (t == 10)
+            		{
+                		updateCourseInformation("8_courses.txt", "8_courses.txt");
+            		}
 
-            if (t == 11)
-            {
-                deleteCourse("8_courses.txt", "8_courses.txt");
-            }
+            		if (t == 11)
+            		{
+                		deleteCourse("8_courses.txt", "8_courses.txt");
+            		}
 
 			if (t == 21)
 			{
