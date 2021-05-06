@@ -88,8 +88,7 @@ void saveToFile(string path, SchoolYear &scYear)
 			fout << "End Date: " << scYear.semesters[i].end.day << '/' << scYear.semesters[i].end.month << '/' << scYear.semesters[i].end.year << '\n';
 		}
 	}
-	else
-		cout << "Can't open file!\n";
+	else cout << "Can't open file!\n";
 	fout.close();
 }
 void createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear &scYear)
@@ -113,8 +112,7 @@ void createClasses1stYearStudent(string path_classes, string pathOutput, SchoolY
 				fout << scYear.classes[i].name << '\n';
 		fout << '\n';
 	}
-	else
-		cout << "Can't open file!\n";
+	else cout << "Can't open file!\n";
 	fout.close();
 }
 void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear &scYear)
