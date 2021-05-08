@@ -10,6 +10,7 @@ int main()
     	Semester sem;
     	Student student;
     	string userName;
+	
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
@@ -166,10 +167,6 @@ int main()
 				cout << "Now you can view your scoreboard : " << endl;
 				viewScoreboard1Stu("scoreboard1.txt",ID);
 			}
-
-
-
-
 		}
 	}
 
