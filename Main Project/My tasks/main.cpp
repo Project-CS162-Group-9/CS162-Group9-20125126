@@ -49,7 +49,6 @@ int main()
 				cout << "Your work has been all in Text File already !\n";
 			}
 
-
 			if (t == 6) {
 				createASemester_SchoolyearThatSemesterBelongsTo("_createNewSemester.txt", "6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", sem);
 				cout << "Your work has been all in Text File already !\n";
