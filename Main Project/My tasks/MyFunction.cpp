@@ -403,8 +403,7 @@ void addCourse(string pathOutput)
 {
     cout << "Enter number of course:" << endl;
 
-    int nums;
-    cin >> nums;
+    int nums; cin >> nums;
 	newCourse *nTemp = new newCourse[nums];
 
     for (int i = 0; i < nums; i++)
@@ -439,7 +438,7 @@ void addCourse(string pathOutput)
 	{
 		for (int i = 0; i < nums; i++)
 		{
-            fout << nTemp[i].ID << endl
+           	 fout << nTemp[i].ID << endl
                  << nTemp[i].nameCourses << endl
                  << nTemp[i].teacher << endl
                  << nTemp[i].day1 << endl
@@ -451,8 +450,7 @@ void addCourse(string pathOutput)
                  << nTemp[i].semester << endl;
 		}
 	}
-	else
-		cout << "Can't open file " << endl;
+	else cout << "Can't open file " << endl;
 	fout.close();
 }
 
