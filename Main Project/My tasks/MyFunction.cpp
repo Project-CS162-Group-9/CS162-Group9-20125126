@@ -477,8 +477,7 @@ void readListOfCourses(string pathInput, newCourse *&nTemp, int &nums)
 			fin >> nTemp[i].semester;
 		}
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fin.close();
 }
 
