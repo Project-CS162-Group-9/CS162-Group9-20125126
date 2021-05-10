@@ -630,28 +630,27 @@ void deleteCourse(string pathInput, string pathOutput)
                  << nTemp[i].semester << endl;
 		}
 	}
-	else
-		cout << "Can't open file " << endl;
+	else cout << "Can't open file " << endl;
 	fout.close();
 }
 
 void readEnrollCourse(string pathInput, Student &s)
 {
-    ifstream fin;
+    	ifstream fin;
 	fin.open(pathInput);
 
 	if (fin.is_open())
-    {
-        fin >> s.courseCount;
-        foru (i, 0, s.courseCount)
-            fin >> s.course[i];
-    }
-    fin.close();
+    	{
+        	fin >> s.courseCount;
+        	foru (i, 0, s.courseCount)
+            		fin >> s.course[i];
+    	}
+    	fin.close();
 }
 
 void writeEnrollCourse(string pathOutput, Student s)
 {
-    ofstream fout;
+    	ofstream fout;
 	fout.open(pathOutput);
 	if (fout.is_open())
 	{
