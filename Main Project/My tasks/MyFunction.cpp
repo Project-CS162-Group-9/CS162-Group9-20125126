@@ -1057,7 +1057,7 @@ void viewScoreboard1Stu(string path,int ID)
 	}
 	if (!check)
 	{
-		cout << "Your scoreboard hasn't imported!!" << endl;
+		cout << "Your scoreboard hasn't imported!!\n";
 	}
 	fin.close();
 	
