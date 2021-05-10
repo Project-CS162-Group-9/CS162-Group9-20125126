@@ -3,8 +3,7 @@
 #include"MyFunction.h"
 using namespace std;
 
-struct User
-{
+struct User {
     int role;	//0: staff, 1: student
     string username;
     string password;
