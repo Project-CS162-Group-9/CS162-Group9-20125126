@@ -456,7 +456,7 @@ void addCourse(string pathOutput)
 
 void readListOfCourses(string pathInput, newCourse *&nTemp, int &nums)
 {
-    ifstream fin;
+    	ifstream fin;
 	fin.open(pathInput);
 	fin >> nums;
 	getline(fin, nTemp[0].ID);
