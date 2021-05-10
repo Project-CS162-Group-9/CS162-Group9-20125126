@@ -908,7 +908,7 @@ void viewScoreboardOfCourse(Scoreboard &scoreboard)
 void updateAStudentResult(string path, Scoreboard &scoreboard)
 {
 	int n;
-	cout << "How many students in course: "<<endl;
+	cout << "How many students in course: " << endl;
 	cin >> n;
 	ifstream fin;
 	fin.open(path);
@@ -977,8 +977,7 @@ void viewScoreboardOfClass(string path)
 			clas.students[i].overallGPA = stoi(temp2);
 		}
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fin.close();
 	cout << "Class name: " << clas.name << endl;
 	cout << "Number of student: " << clas.nStudent << endl;
@@ -1011,7 +1010,7 @@ void viewScoreboard1Stu(string path,int ID)
 	Student* student = new Student[nums];
 	string classname[100];
 	int ID1[100];
-	for (int i = 0;i<nums;i++)
+	for (int i = 0; i < nums; i++)
 	{
 		getline(fin, classname[i]);
 		getline(fin, student[i].No);
