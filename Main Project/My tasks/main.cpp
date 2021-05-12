@@ -43,12 +43,10 @@ int main()
 				importCSVFileStudent1Class("_CSV file.csv", "4_studentsIn1ClassFromCSVfile.txt", cl);
 				cout << "Your work has been all in Text File already !\n";
 			}
-
 			if (t == 5) {
 				addOnly1stYearStudentsToClasses("_students.txt", "5_AddOnly1stYearStudents.txt", scYear);
 				cout << "Your work has been all in Text File already !\n";
 			}
-
 			if (t == 6) {
 				createASemester_SchoolyearThatSemesterBelongsTo("_createNewSemester.txt", "6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", sem);
 				cout << "Your work has been all in Text File already !\n";
