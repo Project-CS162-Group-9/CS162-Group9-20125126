@@ -744,10 +744,12 @@ void removeEnrollCourse(string pathInput,string pathOutput)
     writeEnrollCourse(pathOutput, s);
 }
 
+/*
 void viewStudentCourse(Student &s, newCourse *&nc)
 {
 
 }
+*/
 
 void viewListOfClass(string pathInput)
 {
@@ -770,7 +772,6 @@ void viewListOfClass(string pathInput)
         }
     }
     fin.close();
-
 
 	foru(i, 0, nums - 1)
 	{
@@ -849,8 +850,7 @@ void exportListOfStudentToCSV(string pathIn, string pathOut)
 				fout << student[i].No << "," << student[i].studentID << "," << student[i].firstName << " " << student[i].lastName << endl;
 			}
 		}
-		else
-			cout << "Can't open file !\n";
+		else cout << "Can't open file !\n";
 		fout.close();
 	}
 }
@@ -883,8 +883,7 @@ void importScoreboard(string pathIn, Scoreboard &scoreboard)
 			scoreboard.score[i].other = stoi(Other);
 		}
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fin.close();
 }
 void viewScoreboardOfCourse(Scoreboard &scoreboard)
@@ -933,8 +932,7 @@ void updateAStudentResult(string path, Scoreboard &scoreboard)
 			scoreboard.score[i].other = stoi(Other);
 		}
 	}
-	else
-		cout << "Can not open file \n";
+	else cout << "Can not open file \n";
 	fin.close();
 }
 void viewScoreboardOfClass(string path)
@@ -1059,5 +1057,4 @@ void viewScoreboard1Stu(string path,int ID)
 		cout << "Your scoreboard hasn't imported!!\n";
 	}
 	fin.close();
-	
 }
