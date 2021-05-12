@@ -331,7 +331,8 @@ void createCourseSession(string pathOutput, newCourse &c)
 		fout << "Date open the course registion: " << c.day1 << endl;
 		fout << "Date close the course registion: " << c.day2 << endl;
 	}
-	else cout << "Can not open file \n";
+	else 
+		cout << "Can not open file \n";
 	fout.close();
 }
 /*void addCourse(string path_addCourses, string pathOutput, int &nums)
@@ -450,7 +451,8 @@ void addCourse(string pathOutput)
                  << nTemp[i].semester << endl;
 		}
 	}
-	else cout << "Can't open file " << endl;
+	else 
+		cout << "Can't open file " << endl;
 	fout.close();
 }
 
@@ -477,7 +479,8 @@ void readListOfCourses(string pathInput, newCourse *&nTemp, int &nums)
 			fin >> nTemp[i].semester;
 		}
 	}
-	else cout << "Can not open file \n";
+	else 
+		cout << "Can not open file \n";
 	fin.close();
 }
 
@@ -577,7 +580,8 @@ void updateCourseInformation(string pathInput, string pathOutput)
                  << nTemp[i].semester << endl;
 		}
 	}
-	else cout << "Can't open file " << endl;
+	else 
+		cout << "Can't open file " << endl;
 	fout.close();
 }
 
@@ -629,7 +633,8 @@ void deleteCourse(string pathInput, string pathOutput)
                  << nTemp[i].semester << endl;
 		}
 	}
-	else cout << "Can't open file " << endl;
+	else 
+		cout << "Can't open file " << endl;
 	fout.close();
 }
 
@@ -659,7 +664,8 @@ void writeEnrollCourse(string pathOutput, Student s)
             		fout << s.course[i] << endl;
 		}
 	}
-	else cout << "Can't open file " << endl;
+	else 
+		cout << "Can't open file " << endl;
 	fout.close();
 }
 
@@ -848,7 +854,8 @@ void exportListOfStudentToCSV(string pathIn, string pathOut)
 				fout << student[i].No << "," << student[i].studentID << "," << student[i].firstName << " " << student[i].lastName << endl;
 			}
 		}
-		else cout << "Can't open file !\n";
+		else 
+			cout << "Can't open file !\n";
 		fout.close();
 	}
 }
@@ -881,7 +888,8 @@ void importScoreboard(string pathIn, Scoreboard &scoreboard)
 			scoreboard.score[i].other = stoi(Other);
 		}
 	}
-	else cout << "Can not open file \n";
+	else 
+		cout << "Can not open file \n";
 	fin.close();
 }
 void viewScoreboardOfCourse(Scoreboard &scoreboard)
@@ -930,7 +938,8 @@ void updateAStudentResult(string path, Scoreboard &scoreboard)
 			scoreboard.score[i].other = stoi(Other);
 		}
 	}
-	else cout << "Can not open file \n";
+	else 
+		cout << "Can not open file \n";
 	fin.close();
 }
 void viewScoreboardOfClass(string path)
