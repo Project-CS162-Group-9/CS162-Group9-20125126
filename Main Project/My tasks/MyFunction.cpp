@@ -657,7 +657,7 @@ void writeEnrollCourse(string pathOutput, Student s)
 	    fout << s.courseCount << endl;
 		for (int i = 0; i < s.courseCount; i++)
 		{
-            fout << s.course[i] << endl;
+            		fout << s.course[i] << endl;
 		}
 	}
 	else
@@ -685,7 +685,7 @@ void enrollCourse(Student &s, string pathInput,string pathOutput)
 		s.courseCount ++;
 	}
 	else
-        cout << "You cannot enroll more than 5 course." << endl;
+        	cout << "You cannot enroll more than 5 course." << endl;
 
     writeEnrollCourse(pathOutput, s);
 }
