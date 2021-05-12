@@ -71,7 +71,6 @@ void viewListOfCourses(string pathInput);
 void updateCourseInformation(string pathInput, string pathOutput);
 void deleteCourse(string pathInput, string pathOutput);
 
-
 void enrollCourse(Student &s, string pathInput,string pathOutput);
 void viewEnrollCourse(string pathInputCourse, string pathInputStudent);
 void removeEnrollCourse(string pathInput,string pathOutput);
