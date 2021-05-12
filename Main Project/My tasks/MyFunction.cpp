@@ -577,8 +577,7 @@ void updateCourseInformation(string pathInput, string pathOutput)
                  << nTemp[i].semester << endl;
 		}
 	}
-	else
-		cout << "Can't open file " << endl;
+	else cout << "Can't open file " << endl;
 	fout.close();
 }
 
@@ -660,8 +659,7 @@ void writeEnrollCourse(string pathOutput, Student s)
             		fout << s.course[i] << endl;
 		}
 	}
-	else
-		cout << "Can't open file " << endl;
+	else cout << "Can't open file " << endl;
 	fout.close();
 }
 
@@ -685,7 +683,7 @@ void enrollCourse(Student &s, string pathInput,string pathOutput)
 		s.courseCount ++;
 	}
 	else
-        	cout << "You cannot enroll more than 5 course." << endl;
+    		cout << "You cannot enroll more than 5 course." << endl;
 
     writeEnrollCourse(pathOutput, s);
 }
