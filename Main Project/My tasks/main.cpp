@@ -114,7 +114,7 @@ int main()
 			if (t == 13)
             		{
                 		string tmp = userName + "13_enrollCourse.txt";
-                	enrollCourse(student, tmp, tmp);
+                		enrollCourse(student, tmp, tmp);
             		}
 
 			if (t == 14)
@@ -159,8 +159,7 @@ int main()
 			if (t == 26)
 			{
 				cout << " Enter your ID to view your scoreboard: "<<endl;
-				int ID;
-				cin >> ID;
+				int ID; cin >> ID;
 				cout << "Now you can view your scoreboard : " << endl;
 				viewScoreboard1Stu("scoreboard1.txt",ID);
 			}
