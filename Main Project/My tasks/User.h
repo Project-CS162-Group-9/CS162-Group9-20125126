@@ -13,6 +13,7 @@ struct User {
 };
 
 void readData(string pathIn, User& usr);
-void login(int role, bool& loginOK, string &userName);
+void changePass(string userName, string passWord, int role);
+void login(int role, bool& loginOK, string &userName, bool& changePassword);
 
 #endif

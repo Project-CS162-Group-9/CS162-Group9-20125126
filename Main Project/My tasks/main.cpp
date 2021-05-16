@@ -3,20 +3,25 @@ using namespace std;
 
 int main()
 {
-	bool loginOK;
+	bool loginOK, changePassword = false;
 	SchoolYear scYear;
 	Scoreboard scoreboard;
 	newCourse course;
-    	Semester sem;
-    	Student student;
-    	string userName;
+    Semester sem;
+    Student student;
+    string userName;
 	
+	cout << "Welcome to our system:\n";
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
-	login(role, loginOK, userName);
+	login(role, loginOK, userName, changePassword);
 	if (loginOK == false) {
 		cout << "You login fail more than 5 times ! Please try again later !\n";
+		return 0;
+	}
+	if (changePassword) {
+		cout << "Your Password has been changed already ! Now you can exit and login again !\n";
 		return 0;
 	}
 

@@ -28,6 +28,9 @@
     <ClCompile Include="MyFunction.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="_User.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
