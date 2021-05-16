@@ -10,9 +10,9 @@ int main()
     Semester sem;
     Student student;
     string userName;
-	int n = 0;
-	int m = 0;
-	cout << "Welcome to our system:\n";
+	int n = 0, m = 0;
+	cout << "Welcome to our Course Registration !\n";
+	cout << "	- LOGIN SYSTEM -\n";
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
@@ -22,7 +22,7 @@ int main()
 		return 0;
 	}
 	if (changePassword) {
-		cout << "Your Password has been changed already ! Now you can exit and login again !\n";
+		cout << "\nYour Password has been changed already ! Now you can exit and login again !\nTHANK YOU !\n";
 		return 0;
 	}
 
@@ -62,22 +62,18 @@ int main()
             {
                 createCourseSession("7_courseSession.txt", course);
             }
-
             if (t == 8)
             {
                 addCourse("8_courses.txt");
             }
-
             if (t == 9)
             {
                 viewListOfCourses("8_courses.txt");
             }
-
             if (t == 10)
             {
                 updateCourseInformation("8_courses.txt", "8_courses.txt");
             }
-
             if (t == 11)
             {
                 deleteCourse("8_courses.txt", "8_courses.txt");
@@ -103,7 +99,6 @@ int main()
 				cout << "Now you can view scoreboard of this class: " << endl;
 				viewScoreboardOfClass("scoreboardClass.txt",m);
 			}
-
 			if (t == 23)
 			{
 				cout << "Scoreboard of this course: " << endl;
@@ -122,41 +117,33 @@ int main()
                 string tmp = userName + "13_enrollCourse.txt";
                 enrollCourse(student, tmp, tmp);
             }
-
 			if (t == 14)
-            {
-                string tmp = userName + "13_enrollCourse.txt";
-                viewEnrollCourse("8_courses.txt", tmp);
-            }
-
+			{
+				string tmp = userName + "13_enrollCourse.txt";
+				viewEnrollCourse("8_courses.txt", tmp);
+			}
             if (t == 15)
             {
                 string tmp = userName + "13_enrollCourse.txt";
                 removeEnrollCourse(tmp, tmp);
             }
-
             if (t == 16)
             {
                 string tmp = userName + "13_enrollCourse.txt";
                 viewEnrollCourse("8_courses.txt", tmp);
             }
-
             if (t == 17)
             {
                 viewListOfClass("_classes.txt");
             }
-
-
 			if (t == 18) {
 				cout << "You can View list of students in a class (for example: 20APCS1,...):\n";
 				Class c; viewListOfStudentInAClass(c);
 			}
-
 			if (t == 19)
             {
                 viewListOfCourses("8_courses.txt");
             }
-
 			if (t == 20) {
 				cout << "You can View list of students in a class (for example: 20APCS1,...):\n";
 				Class c; viewListOfStudentInAClass(c);
@@ -170,7 +157,6 @@ int main()
 				cout << "Now you can view your scoreboard : " << endl;
 				viewScoreboard1Stu("scoreboard1.txt",ID);
 			}
-
 		}
 	}
 

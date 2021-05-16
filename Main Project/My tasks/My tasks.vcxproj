@@ -29,7 +29,24 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="13_enrollCourse.txt" />
+    <Text Include="1_outputSchoolYear.txt" />
+    <Text Include="2_classes1stYearStudent.txt" />
+    <Text Include="3_studentsIn1stYearClasses.txt" />
+    <Text Include="4_studentsIn1ClassFromCSVfile.txt" />
+    <Text Include="5_AddOnly1stYearStudents.txt" />
+    <Text Include="6_createASemesters_SchoolyearThatSemesterBelongsTo.txt" />
+    <Text Include="7_courseSession.txt" />
+    <Text Include="8_courses.txt" />
+    <Text Include="_classes.txt" />
+    <Text Include="_createNewSemester.txt" />
+    <Text Include="_semesters.txt" />
+    <Text Include="_staffs.txt" />
+    <Text Include="_students.txt" />
     <Text Include="_User.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_CSV file.csv" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
