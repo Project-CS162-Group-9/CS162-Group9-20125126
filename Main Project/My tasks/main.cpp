@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-	bool loginOK;
+	bool loginOK, changePassword = false;
 	SchoolYear scYear;
 	Scoreboard scoreboard;
 	newCourse course;
@@ -12,12 +12,17 @@ int main()
     string userName;
 	int n = 0;
 	int m = 0;
+	cout << "Welcome to our system:\n";
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
-	login(role, loginOK, userName);
+	login(role, loginOK, userName, changePassword);
 	if (loginOK == false) {
 		cout << "You login fail more than 5 times ! Please try again later !\n";
+		return 0;
+	}
+	if (changePassword) {
+		cout << "Your Password has been changed already ! Now you can exit and login again !\n";
 		return 0;
 	}
 
@@ -44,13 +49,10 @@ int main()
 				importCSVFileStudent1Class("_CSV file.csv", "4_studentsIn1ClassFromCSVfile.txt", cl);
 				cout << "Your work has been all in Text File already !\n";
 			}
-
 			if (t == 5) {
 				addOnly1stYearStudentsToClasses("_students.txt", "5_AddOnly1stYearStudents.txt", scYear);
 				cout << "Your work has been all in Text File already !\n";
 			}
-
-
 			if (t == 6) {
 				createASemester_SchoolyearThatSemesterBelongsTo("_createNewSemester.txt", "6_createASemesters_SchoolyearThatSemesterBelongsTo.txt", sem);
 				cout << "Your work has been all in Text File already !\n";
