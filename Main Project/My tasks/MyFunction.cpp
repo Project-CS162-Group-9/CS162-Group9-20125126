@@ -21,7 +21,8 @@ void loadStaff(string path, SchoolYear &scYear)
 			getline(fin, scYear.staffs[i].password);
 		}
 	}
-	else cout << "Can't open file!\n";
+	else
+		cout << "Can't open file!\n";
 	//delete[] scYear.staffs;
 	fin.close();
 }
@@ -41,7 +42,8 @@ void loadClass(string path, SchoolYear &scYear)
 			getline(fin, scYear.classes[i].name);
 		}
 	}
-	else cout << "Can't open file!\n";
+	else
+		cout << "Can't open file!\n";
 	fin.close();
 }
 void loadSemester(string path, SchoolYear &scYear)
@@ -59,7 +61,8 @@ void loadSemester(string path, SchoolYear &scYear)
 			fin.ignore();
 		}
 	}
-	else cout << "Can't open file!\n";
+	else
+		cout << "Can't open file!\n";
 	fin.close();
 }
 void saveToFile(string path, SchoolYear &scYear)
@@ -88,7 +91,8 @@ void saveToFile(string path, SchoolYear &scYear)
 			fout << "End Date: " << scYear.semesters[i].end.day << '/' << scYear.semesters[i].end.month << '/' << scYear.semesters[i].end.year << '\n';
 		}
 	}
-	else cout << "Can't open file!\n";
+	else
+		cout << "Can't open file!\n";
 	fout.close();
 }
 void createASchoolYear(string path_staffs, string path_classes, string path_semesters, string pathOutput, SchoolYear &scYear)
@@ -112,7 +116,8 @@ void createClasses1stYearStudent(string path_classes, string pathOutput, SchoolY
 				fout << scYear.classes[i].name << '\n';
 		fout << '\n';
 	}
-	else cout << "Can't open file!\n";
+	else
+		cout << "Can't open file!\n";
 	fout.close();
 }
 void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear &scYear)
@@ -176,7 +181,8 @@ void addNew1stYearStudents(string path_students, string pathOutput, SchoolYear &
 				fout << '\n';
 			}
 	}
-	else cout << "Can't open file !\n";
+	else
+		cout << "Can't open file !\n";
 	fout.close();
 }
 void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class &cl)
@@ -219,7 +225,8 @@ void importCSVFileStudent1Class(string path_CSV, string pathOutput, Class &cl)
 				 << '\n';
 		}
 	}
-	else cout << "Can't open file !\n";
+	else
+		cout << "Can't open file !\n";
 	fout.close();
 }
 void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, SchoolYear &scYear)
@@ -283,7 +290,8 @@ void addOnly1stYearStudentsToClasses(string path_students, string pathOutput, Sc
 				fout << '\n';
 			}
 	}
-	else cout << "Can't open file !\n";
+	else
+		cout << "Can't open file !\n";
 	fout.close();
 }
 void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, string pathOutput, Semester &sem)
@@ -296,7 +304,8 @@ void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, st
 		fin >> sem.start.day >> sem.start.month >> sem.start.year;
 		fin >> sem.end.day >> sem.end.month >> sem.end.year;
 	}
-	else cout << "Can't open file!\n";
+	else
+		cout << "Can't open file!\n";
 	fin.close();
 
 	ofstream fout;
@@ -314,7 +323,8 @@ void createASemester_SchoolyearThatSemesterBelongsTo(string path_NewSemester, st
 		else
 			fout << sem.end.year - 1 << " - " << sem.end.year;
 	}
-	else cout << "Can't open file !\n";
+	else
+		cout << "Can't open file !\n";
 	fout.close();
 }
 
@@ -331,12 +341,14 @@ void createCourseSession(string pathOutput, newCourse &c)
 		fout << "Date open the course registion: " << c.day1 << endl;
 		fout << "Date close the course registion: " << c.day2 << endl;
 	}
-	else 
+	else
 		cout << "Can not open file \n";
 	fout.close();
 }
 /*void addCourse(string path_addCourses, string pathOutput, int &nums)
 {
+
+
 	fin >> nums;
 	newCourse *nTemp = new newCourse[nums];
 	fin.open(path_addCourses);
@@ -404,7 +416,8 @@ void addCourse(string pathOutput)
 {
     cout << "Enter number of course:" << endl;
 
-    int nums; cin >> nums;
+    int nums;
+    cin >> nums;
 	newCourse *nTemp = new newCourse[nums];
 
     for (int i = 0; i < nums; i++)
@@ -439,7 +452,7 @@ void addCourse(string pathOutput)
 	{
 		for (int i = 0; i < nums; i++)
 		{
-           	 fout << nTemp[i].ID << endl
+            fout << nTemp[i].ID << endl
                  << nTemp[i].nameCourses << endl
                  << nTemp[i].teacher << endl
                  << nTemp[i].day1 << endl
@@ -451,14 +464,14 @@ void addCourse(string pathOutput)
                  << nTemp[i].semester << endl;
 		}
 	}
-	else 
+	else
 		cout << "Can't open file " << endl;
 	fout.close();
 }
 
 void readListOfCourses(string pathInput, newCourse *&nTemp, int &nums)
 {
-    	ifstream fin;
+    ifstream fin;
 	fin.open(pathInput);
 	fin >> nums;
 	getline(fin, nTemp[0].ID);
@@ -479,7 +492,7 @@ void readListOfCourses(string pathInput, newCourse *&nTemp, int &nums)
 			fin >> nTemp[i].semester;
 		}
 	}
-	else 
+	else
 		cout << "Can not open file \n";
 	fin.close();
 }
@@ -580,7 +593,7 @@ void updateCourseInformation(string pathInput, string pathOutput)
                  << nTemp[i].semester << endl;
 		}
 	}
-	else 
+	else
 		cout << "Can't open file " << endl;
 	fout.close();
 }
@@ -633,38 +646,38 @@ void deleteCourse(string pathInput, string pathOutput)
                  << nTemp[i].semester << endl;
 		}
 	}
-	else 
+	else
 		cout << "Can't open file " << endl;
 	fout.close();
 }
 
 void readEnrollCourse(string pathInput, Student &s)
 {
-    	ifstream fin;
+    ifstream fin;
 	fin.open(pathInput);
 
 	if (fin.is_open())
-    	{
-        	fin >> s.courseCount;
-        	foru (i, 0, s.courseCount)
-            		fin >> s.course[i];
-    	}
-    	fin.close();
+    {
+        fin >> s.courseCount;
+        foru (i, 0, s.courseCount)
+            fin >> s.course[i];
+    }
+    fin.close();
 }
 
 void writeEnrollCourse(string pathOutput, Student s)
 {
-    	ofstream fout;
+    ofstream fout;
 	fout.open(pathOutput);
 	if (fout.is_open())
 	{
 	    fout << s.courseCount << endl;
 		for (int i = 0; i < s.courseCount; i++)
 		{
-            		fout << s.course[i] << endl;
+            fout << s.course[i] << endl;
 		}
 	}
-	else 
+	else
 		cout << "Can't open file " << endl;
 	fout.close();
 }
@@ -689,7 +702,7 @@ void enrollCourse(Student &s, string pathInput,string pathOutput)
 		s.courseCount ++;
 	}
 	else
-    		cout << "You cannot enroll more than 5 course." << endl;
+        cout << "You cannot enroll more than 5 course." << endl;
 
     writeEnrollCourse(pathOutput, s);
 }
@@ -748,12 +761,10 @@ void removeEnrollCourse(string pathInput,string pathOutput)
     writeEnrollCourse(pathOutput, s);
 }
 
-/*
 void viewStudentCourse(Student &s, newCourse *&nc)
 {
 
 }
-*/
 
 void viewListOfClass(string pathInput)
 {
@@ -776,6 +787,7 @@ void viewListOfClass(string pathInput)
         }
     }
     fin.close();
+
 
 	foru(i, 0, nums - 1)
 	{
@@ -823,7 +835,6 @@ void viewListOfStudentInAClass(Class &c)
 		cout << '\n';
 	}
 }
-
 void exportListOfStudentToCSV(string pathIn, string pathOut)
 {
 	int nums;
@@ -854,21 +865,20 @@ void exportListOfStudentToCSV(string pathIn, string pathOut)
 				fout << student[i].No << "," << student[i].studentID << "," << student[i].firstName << " " << student[i].lastName << endl;
 			}
 		}
-		else 
+		else
 			cout << "Can't open file !\n";
 		fout.close();
 	}
 }
-void importScoreboard(string pathIn, Scoreboard &scoreboard)
+void importScoreboard(string pathIn, Scoreboard &scoreboard, int& n)
 {
-	int n;
-	cout << "How many students in course: "<<endl;
-	cin >> n;
 	ifstream fin;
 	fin.open(pathIn);
 	if (fin.is_open())
 	{
-		//fin.ignore();
+		string n1;
+		getline(fin, n1);
+		n = stoi(n1);
 		scoreboard.student = new Student[n];
 		scoreboard.score = new Score[n];
 		for (int i = 0; i < n; i++)
@@ -888,15 +898,12 @@ void importScoreboard(string pathIn, Scoreboard &scoreboard)
 			scoreboard.score[i].other = stoi(Other);
 		}
 	}
-	else 
+	else
 		cout << "Can not open file \n";
 	fin.close();
 }
-void viewScoreboardOfCourse(Scoreboard &scoreboard)
+void viewScoreboardOfCourse(Scoreboard &scoreboard, int& n)
 {
-	int n;
-	cout << "How many students in course: "<<endl;
-	cin >> n;
 	for (int i = 0; i < n; i++)
 	{
 		cout << scoreboard.student[i].No << ",";
@@ -909,16 +916,15 @@ void viewScoreboardOfCourse(Scoreboard &scoreboard)
 		cout << scoreboard.score[i].other << "\n";
 	}
 }
-void updateAStudentResult(string path, Scoreboard &scoreboard)
+void updateAStudentResult(string path, Scoreboard &scoreboard, int& n)
 {
-	int n;
-	cout << "How many students in course: " << endl;
-	cin >> n;
 	ifstream fin;
 	fin.open(path);
 	if (fin.is_open())
 	{
-		//fin.ignore();
+		string n1;
+		getline(fin, n1);
+		n = stoi(n1);
 		scoreboard.student = new Student[n];
 		scoreboard.score = new Score[n];
 		for (int i = 0; i < n; i++)
@@ -938,25 +944,23 @@ void updateAStudentResult(string path, Scoreboard &scoreboard)
 			scoreboard.score[i].other = stoi(Other);
 		}
 	}
-	else 
+	else
 		cout << "Can not open file \n";
 	fin.close();
 }
-void viewScoreboardOfClass(string path)
+void viewScoreboardOfClass(string path, int& m)
 {
-	int n;
-	cout << "How many students in class: "<<endl;
-	cin >> n;
 	Class clas;
-	clas.students = new Student[n];
 	ifstream fin;
 	fin.open(path);
+	string m1;
+	getline(fin, m1);
+	m = stoi(m1);
+	clas.students = new Student[m];
 	if (fin.is_open())
 	{
 		getline(fin, clas.name);
-		string nums;
-		getline(fin, nums);
-		clas.nStudent = stoi(nums);
+		clas.nStudent = m;
 		for (int i = 0; i < clas.nStudent; i++)
 		{
 
@@ -981,7 +985,8 @@ void viewScoreboardOfClass(string path)
 			clas.students[i].overallGPA = stoi(temp2);
 		}
 	}
-	else cout << "Can not open file \n";
+	else
+		cout << "Can not open file \n";
 	fin.close();
 	cout << "Class name: " << clas.name << endl;
 	cout << "Number of student: " << clas.nStudent << endl;
@@ -1014,7 +1019,7 @@ void viewScoreboard1Stu(string path,int ID)
 	Student* student = new Student[nums];
 	string classname[100];
 	int ID1[100];
-	for (int i = 0; i < nums; i++)
+	for (int i = 0;i<nums;i++)
 	{
 		getline(fin, classname[i]);
 		getline(fin, student[i].No);
@@ -1061,7 +1066,8 @@ void viewScoreboard1Stu(string path,int ID)
 	}
 	if (!check)
 	{
-		cout << "Your scoreboard hasn't imported!!\n";
+		cout << "Your scoreboard hasn't imported!!" << endl;
 	}
 	fin.close();
+	
 }

@@ -70,7 +70,6 @@ void addCourse(string path_addCourses);
 void viewListOfCourses(string pathInput);
 void updateCourseInformation(string pathInput, string pathOutput);
 void deleteCourse(string pathInput, string pathOutput);
-
 void enrollCourse(Student &s, string pathInput,string pathOutput);
 void viewEnrollCourse(string pathInputCourse, string pathInputStudent);
 void removeEnrollCourse(string pathInput,string pathOutput);
@@ -79,11 +78,11 @@ void viewStudentCourse(Student &s, newCourse* &nc);
 void viewListOfClass(string pathInput);
 void viewListOfStudentInAClass(Class &c);
 
-void importScoreboard(string pathIn, Scoreboard& scoreboard);
+void importScoreboard(string pathIn, Scoreboard& scoreboard,int& n);
 void exportListOfStudentToCSV(string pathIn,string pathOut);
-void viewScoreboardOfCourse(Scoreboard& scoreboard);
-void updateAStudentResult(string path, Scoreboard& scoreboard);
-void viewScoreboardOfClass(string path);
+void viewScoreboardOfCourse(Scoreboard& scoreboard,int& n);
+void updateAStudentResult(string path, Scoreboard& scoreboard, int& n);
+void viewScoreboardOfClass(string path, int& m);
 void viewScoreboard1Stu(string path,int ID);
 
 #endif
