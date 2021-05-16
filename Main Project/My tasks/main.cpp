@@ -11,8 +11,9 @@ int main()
     Student student;
     string userName;
 	int n = 0, m = 0;
-	cout << "Welcome to our Course Registration !\n";
-	cout << "	- LOGIN SYSTEM -\n";
+
+	cout << "Welcome to our Course Registration !\n\n\t- LOGIN SYSTEM -\n";
+//	cout << "	- LOGIN SYSTEM -\n";
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
@@ -30,7 +31,7 @@ int main()
 	{
 		while (true) {
 			cout << "Input which work in Project (1, 2, 3,...) Staff want to do, input '0' to stop working: "; int t; cin >> t;
-			if (t == 0) { cout << "Thank you for using our Project !\n"; return 0; }
+			if (t == 0) { cout << "\n\t- Thank you for using our System ! -\n"; return 0; }
 
 			if (t == 1) {
 				createASchoolYear("_staffs.txt", "_classes.txt", "_semesters.txt", "1_outputSchoolYear.txt", scYear);
@@ -86,18 +87,18 @@ int main()
 			}
 			if (t == 22)
 			{
-				importScoreboard("scoreboard.csv", scoreboard,n);
+				importScoreboard("scoreboard.csv", scoreboard, n);
 				cout << "Successfully. Now you can see the scoreboard that you just import!!"<< endl;
 			}
 			if (t == 24)
 			{
-				updateAStudentResult("scoreboard.csv", scoreboard,n);
+				updateAStudentResult("scoreboard.csv", scoreboard, n);
 				cout << "Your work has been all in CSV File already !\n";
 			}
 			if (t == 25)
 			{
 				cout << "Now you can view scoreboard of this class: " << endl;
-				viewScoreboardOfClass("scoreboardClass.txt",m);
+				viewScoreboardOfClass("scoreboardClass.txt", m);
 			}
 			if (t == 23)
 			{
@@ -110,7 +111,7 @@ int main()
 	{
 		while (true) {
 			cout << "Input which work in Project (1, 2, 3,...) a Student want to do, input '0' to stop working: "; int t; cin >> t;
-			if (t == 0) { cout << "Thank you for using our Project !\n"; return 0; }
+			if (t == 0) { cout << "\n\t- Thank you for using our System ! -\n"; return 0; }
 
 			if (t == 13)
             {
@@ -155,7 +156,7 @@ int main()
 				int ID;
 				cin >> ID;
 				cout << "Now you can view your scoreboard : " << endl;
-				viewScoreboard1Stu("scoreboard1.txt",ID);
+				viewScoreboard1Stu("scoreboard1.txt", ID);
 			}
 		}
 	}
