@@ -13,7 +13,6 @@ int main()
 	int n = 0, m = 0;
 
 	cout << "Welcome to our Course Registration !\n\n\t- LOGIN SYSTEM -\n";
-//	cout << "	- LOGIN SYSTEM -\n";
 	cout << "Your role (0: staff, 1: student): "; int role; cin >> role;
 
 	cin.ignore();
@@ -29,8 +28,25 @@ int main()
 
 	if (role == 0)
 	{
+		cout << "\n\t~ As a Staff, You can do following work in our system: ~\n"
+			<< "1. Create a school year (2020-2021, for example)\n"
+			<< "2. Create several classes for 1st year students. For example : class 20APCS1..., class 20CLC1..., class 20VP\n"
+			<< "3. Add new 1st year students to 1st-year classes.\n"
+			<< "4. For quick input, he/she can import a CSV file in a specific class, instead of adding one by one.\n"
+			<< "5. He/she does not need to add 2nd year, 3rd year, or 4th-year students, because these students had been added.\n"
+			<< "6. Create a semester. Choose the school year that the newly created semester belongs to.\n"
+			<< "7. Create a course registration session: start date, end date.\n"
+			<< "8. Add a course to this semester: course id, course name, teacher name, number of credits,...\n"
+			<< "9. View list of courses.\n"
+			<< "10. Update course information.\n"
+			<< "11. Delete a course.\n"
+			<< "21. Export list of students in a course to a CSV file.\n"
+			<< "22. Import the scoreboard of a course.\n"
+			<< "23. View the scoreboard of a course.\n"
+			<< "24. Update a student result.\n"
+			<< "25. View the scoreboard of a class, including final marks, GPA in this semester and the overall.\n\n";
 		while (true) {
-			cout << "Input which work in Project (1, 2, 3,...) Staff want to do, input '0' to stop working: "; int t; cin >> t;
+			cout << "Which work you want to do, input '0' to stop working: "; int t; cin >> t;
 			if (t == 0) { cout << "\n\t- Thank you for using our System ! -\n"; return 0; }
 
 			if (t == 1) {
@@ -109,8 +125,18 @@ int main()
 	}
 	else    // students' work
 	{
+		cout << "\n\t~ As a Student, You can do following work in our system: ~\n"
+		<< "13. Enroll in a course.\n"
+		<< "14. View list of enrolled courses.\n"
+		<< "15. Remove a course from the enrolled list.\n"
+		<< "16. View list of his/her courses. He/she will study these courses in this semester.\n"
+		<< "17. View list of classes.\n"
+		<< "18. View list of students in a class (for example, 20APCS1...)\n"
+		<< "19. View list of courses.\n"
+		<< "20. View list of students in a course.\n"
+		<< "26. View his/her scoreboard.\n\n";
 		while (true) {
-			cout << "Input which work in Project (1, 2, 3,...) a Student want to do, input '0' to stop working: "; int t; cin >> t;
+			cout << "Which work you want to do, input '0' to stop working: "; int t; cin >> t;
 			if (t == 0) { cout << "\n\t- Thank you for using our System ! -\n"; return 0; }
 
 			if (t == 13)

@@ -46,6 +46,7 @@
     <Text Include="_User.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="scoreboard.csv" />
     <None Include="_CSV file.csv" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
